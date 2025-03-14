@@ -1,0 +1,66 @@
+* Concept
+Incremental colony builder. Inspired by dwarf fortress, the dark room, and others 
+
+* Development
+A rough outline of priorities. Each phase should only take 1-2 weeks
+** Phase 1
+- [ ] initial html
+  - [ ] header for holding basic info (i.e. Settlement name, population, overall mood)
+  - [ ] footer for holding "promo" info
+  - [ ] sidebar for holding resource counts (i.e. ore, ingots, jewels, wood, etc.)
+  - [ ] side bar on opposite side for population alocation that displays (assigned pops/total pops)
+  - [ ] center container for displaying buildings with tabs for different levels of production
+- [ ] initial javascript
+  - [ ] helper functions for:
+    - [ ] countdowns
+    - [ ] incrementing
+    - [ ] decrementing
+    - [ ] generating random numbers
+    - [ ] updating on screen values
+  - [ ] index functions
+    - [ ] updating local storage
+    - [ ] reading from local storage
+- [ ] initial style rules
+  - [ ] color variables
+  - [ ] basic padding and margins
+  - [ ] borders
+  - [ ] position of blocks
+** Phase 2
+- [ ] javascript for linked list
+  - [ ] node class
+  - [ ] updating node values
+  - [ ] traversing nodes
+  - [ ] saving map to local storage
+- [ ] html for buildings
+  - [ ] raw resource collection (lumber yards, mines, farms, etc.)
+  - [ ] basic industry (mills, forges, masons, etc.)
+  - [ ] second tier industry (smithies, kitchens/distilleries, carpenters, etc.)
+  - [ ] military (barracks, training grounds, walls, watch towers, etc.)
+- [ ] javascript for managing resources
+  - [ ] updating resource numbers based on income/expense
+  - [ ] increasing/decreasing building levels
+  - [ ] increasing/decreasing assigned pops
+- [ ] html for military
+  - [ ] block for overview of military units (number of swordsman, spearman, archers, etc.)
+    - [ ] displays number current number of units/max number of units
+  - [ ] block for created squads
+    - [ ] displays number of squads/maximum number of squads
+    - [ ] each squad should display a name, the number of units assigned/maximum size of squad
+  - [ ] block for any squads on active missions
+- [ ] styles rules for individual blocks
+** Phase 3
+- [ ] html for "buttons"
+  - [ ] buildings (changing level and number of pops assigned)
+  - [ ] military units/squads (dismissing or recruiting units, creating or destroying squads)
+  - [ ] more info buttons (for buildings, resources, etc.)
+- [ ] javascript for events
+  - [ ] event listeners for click events
+  - [ ] displaying and populating modals
+  - [ ] military actions and results
+- [ ] style rules for events
+- [ ] javascript for tracking timers across sessions
+** Phase 4
+- [ ] review javscript for refactoring
+- [ ] review HTMl for refactoring
+- [ ] review CSS for refactoring
+- [ ] planning for any refactoring
