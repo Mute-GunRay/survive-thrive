@@ -59,8 +59,3 @@ A rough outline of priorities. Each phase should only take 1-2 weeks
   - [ ] military actions and results
 - [ ] style rules for events
 - [ ] javascript for tracking timers across sessions
-** Phase 4
-- [ ] review javscript for refactoring
-- [ ] review HTMl for refactoring
-- [ ] review CSS for refactoring
-- [ ] planning for any refactoring
