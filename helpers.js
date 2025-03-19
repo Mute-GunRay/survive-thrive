@@ -21,6 +21,8 @@ function calculateTime(level, labor, tier){
     return generateRandomValue(max);
 }
 
-function getTimer(){
-    
+function generateRandomValue(max){
+    return Math.floor(Math.random * max);
 }
+
+ 

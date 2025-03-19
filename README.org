@@ -10,10 +10,10 @@ A rough outline of priorities. Each phase should only take 1-2 weeks
   - [X] sidebar for holding resource counts (i.e. ore, ingots, jewels, wood, etc.)
   - [X] side bar on opposite side for population alocation that displays (assigned pops/total pops)
   - [X] center container for displaying buildings with tabs for different levels of production
-- [ ] initial javascript
-  - [ ] helper functions for:
-    - [ ] countdowns
-    - [ ] generating random numbers
+- [-] initial javascript
+  - [-] helper functions for:
+    - [X] countdowns
+    - [X] generating random numbers
     - [ ] updating on screen values
   - [ ] index functions
     - [ ] updating local storage
