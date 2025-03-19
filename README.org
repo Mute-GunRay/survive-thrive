@@ -4,17 +4,15 @@ Incremental colony builder. Inspired by dwarf fortress, the dark room, and other
 * Development
 A rough outline of priorities. Each phase should only take 1-2 weeks
 ** Phase 1
-- [ ] initial html
-  - [ ] header for holding basic info (i.e. Settlement name, population, overall mood)
-  - [ ] footer for holding "promo" info
-  - [ ] sidebar for holding resource counts (i.e. ore, ingots, jewels, wood, etc.)
-  - [ ] side bar on opposite side for population alocation that displays (assigned pops/total pops)
-  - [ ] center container for displaying buildings with tabs for different levels of production
+- [X] initial html
+  - [X] header for holding basic info (i.e. Settlement name, population, overall mood)
+  - [X] footer for holding "promo" info
+  - [X] sidebar for holding resource counts (i.e. ore, ingots, jewels, wood, etc.)
+  - [X] side bar on opposite side for population alocation that displays (assigned pops/total pops)
+  - [X] center container for displaying buildings with tabs for different levels of production
 - [ ] initial javascript
   - [ ] helper functions for:
     - [ ] countdowns
-    - [ ] incrementing
-    - [ ] decrementing
     - [ ] generating random numbers
     - [ ] updating on screen values
   - [ ] index functions
