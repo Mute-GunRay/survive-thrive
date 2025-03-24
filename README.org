@@ -1,59 +1,54 @@
 * Concept
-Incremental colony builder. Inspired by dwarf fortress, the dark room, and others 
+An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress Knight, Midnight Idle, and others
 
 * Development
-A rough outline of priorities. Each phase should only take 1-2 weeks
 ** Phase 1
-- [X] initial html
-  - [X] header for holding basic info (i.e. Settlement name, population, overall mood)
-  - [X] footer for holding "promo" info
-  - [X] sidebar for holding resource counts (i.e. ore, ingots, jewels, wood, etc.)
-  - [X] side bar on opposite side for population alocation that displays (assigned pops/total pops)
-  - [X] center container for displaying buildings with tabs for different levels of production
-- [-] initial javascript
-  - [-] helper functions for:
-    - [X] countdowns
-    - [X] generating random numbers
-    - [ ] updating on screen values
-  - [ ] index functions
-    - [ ] updating local storage
-    - [ ] reading from local storage
-- [ ] initial style rules
-  - [ ] color variables
-  - [ ] basic padding and margins
-  - [ ] borders
-  - [ ] position of blocks
+- [ ] HTML framing
+  - [ ] header contianing:
+    - [ ] Player name
+    - [ ] Player Job &  level
+    - [ ] Player HP & SP
+    - [ ] Player Money
+  - [ ] main containing:
+    - [ ] side bar with player schedule
+    - [ ] side bar with player stats:
+      - [ ] hunger
+      - [ ] thirst
+      - [ ] strength
+      - [ ] charisma
+      - [ ] agility
+      - [ ] endurance
+      - [ ] intelligence
+    - [ ] center container containing:
+      - [ ] blocks for:
+	- [ ] store
+	- [ ] inventory
+	- [ ] skills
+	- [ ] jobs
+    - [ ] footer for "promo" blocks
+- [ ] Javascript framing
+  - [ ] main functionality:
+    - [ ] timer functions
+    - [ ] creating modals
+    - [ ] updating values
+- [ ] CSS framing
+  - [ ] placement of blocks
+  - [ ] colors for all elements
+  - [ ] fonts for all elements
 ** Phase 2
-- [ ] javascript for linked list
-  - [ ] node class
-  - [ ] updating node values
-  - [ ] traversing nodes
-  - [ ] saving map to local storage
-- [ ] html for buildings
-  - [ ] raw resource collection (lumber yards, mines, farms, etc.)
-  - [ ] basic industry (mills, forges, masons, etc.)
-  - [ ] second tier industry (smithies, kitchens/distilleries, carpenters, etc.)
-  - [ ] military (barracks, training grounds, walls, watch towers, etc.)
-- [ ] javascript for managing resources
-  - [ ] updating resource numbers based on income/expense
-  - [ ] increasing/decreasing building levels
-  - [ ] increasing/decreasing assigned pops
-- [ ] html for military
-  - [ ] block for overview of military units (number of swordsman, spearman, archers, etc.)
-    - [ ] displays number current number of units/max number of units
-  - [ ] block for created squads
-    - [ ] displays number of squads/maximum number of squads
-    - [ ] each squad should display a name, the number of units assigned/maximum size of squad
-  - [ ] block for any squads on active missions
-- [ ] styles rules for individual blocks
+- [ ] HTML details
+  - [ ] select boxes for time slots
+  - [ ] tab bar for center container
+- [ ] Javascript Details
+  - [ ] populating initial center blocks
+  - [ ] checking player stats and unlocking jobs, items, skills, etc accordingly
+  - [ ] firing random events
+- [ ] CSS details
+  - [ ] extract global variables
+  - [ ] add pseudo classes for effects
 ** Phase 3
-- [ ] html for "buttons"
-  - [ ] buildings (changing level and number of pops assigned)
-  - [ ] military units/squads (dismissing or recruiting units, creating or destroying squads)
-  - [ ] more info buttons (for buildings, resources, etc.)
-- [ ] javascript for events
-  - [ ] event listeners for click events
-  - [ ] displaying and populating modals
-  - [ ] military actions and results
-- [ ] style rules for events
-- [ ] javascript for tracking timers across sessions
+- [ ] Write story events
+- [ ] Add Javascript for incrementing specific xp based on activities (what is done in timeslots)
+- [ ] add HTML blocks for notifications
+- [ ] Review Javascript with a focus on refactors
+- [ ] Begin Long term testing of game

@@ -238,6 +238,7 @@ if(storedBuildingData){
 	    levelUpTime: null,
 	},
     }
+    localStorage.setItem("thriveBuildingData", JSON.stringify(thriveBuildingData));
 }
 
 
