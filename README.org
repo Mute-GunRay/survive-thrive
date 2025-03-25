@@ -15,18 +15,18 @@ An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress
     - [X] energy
   - [-] main containing:
     - [X] side bar with player schedule
-    - [ ] side bar with player stats:
-      - [ ] strength
-      - [ ] charisma
-      - [ ] agility
-      - [ ] endurance
-      - [ ] intelligence
-    - [ ] center container containing:
-      - [ ] blocks for:
-	- [ ] store
-	- [ ] inventory
-	- [ ] skills
-	- [ ] jobs
+    - [X] side bar with player stats:
+      - [X] strength
+      - [X] charisma
+      - [X] agility
+      - [X] endurance
+      - [X] intelligence
+    - [X] center container containing:
+      - [X] blocks for:
+	- [X] store
+	- [X] inventory
+	- [X] skills
+	- [X] jobs
     - [ ] footer for "promo" blocks
 - [ ] Javascript framing
   - [ ] main functionality:
