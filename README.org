@@ -3,7 +3,7 @@ An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress
 
 * Development
 ** Phase 1
-- [-] HTML framing
+- [X] HTML framing
   - [X] header contianing:
     - [X] Player name
     - [X] Player Job &  level
@@ -13,7 +13,7 @@ An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress
     - [X] hunger
     - [X] thrist
     - [X] energy
-  - [-] main containing:
+  - [X] main containing:
     - [X] side bar with player schedule
     - [X] side bar with player stats:
       - [X] strength
@@ -27,7 +27,7 @@ An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress
 	- [X] inventory
 	- [X] skills
 	- [X] jobs
-    - [ ] footer for "promo" blocks
+    - [X] footer for "promo" blocks
 - [ ] Javascript framing
   - [ ] main functionality:
     - [ ] timer functions
