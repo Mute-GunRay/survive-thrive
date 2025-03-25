@@ -1,244 +1,119 @@
-// on load should attempt to read from local storage
-// if data is present set "gameData" object(s) to local storage values
-// if no data is present, instantiate new data objects and populate local storage with base line data
+// TODO: consider using fragments when rendering or bulk updating
 
-// "gameData" should consist of a set of JS objects for basic data (i.e. name, population, resources, etc.),
-// buildings, military, and administration
-
-// on first load, center container should be populated with only basic buildings: houses farms, mines quarries, lumber camps
-// functions should be written that are called whenever certain values increment, to check if thresholds have been reached to unlock
-// new buildings or mechanics
-
-// event listener functions should be written to be passed as callbacks when attaching event listeners
-// event listener callbacks should also call checker functions after running all other codea
-let thriveResourceData;
-let thriveBuildingData;
-
-let storedResourceData = localStorage.getItem("thriveResourceData");
-if(storedData){
-    thriveResourceData = storedData; 
-} else {
-    thriveResourceData = {
-	basics: {
-	    name: "",
-	    population: 0,
-	    mood: 0,
+let gameData = {
+    'player': {
+	'name': '',
+	'birth day': 1,
+	'birth month': 1,
+	'current job': ['title', 0],
+	'hunger': 100,
+	'thirst': 100,
+	'energy': 100,
+	'money': 0,
+	'age': 18,
+	'stats': {
+	    'strength': 0,
+	    'charisma': 0,
+	    'agility': 0,
+	    'endurance': 0,
+	    'intelligence': 0,
 	},
-	food: {
-	    grain: 0,
-	    meat: 0,
-	    fish: 0,
-	    fruit: 0,
-	    vegetables: 0,
-	    bread: 0,
-	    alcohol: 0
-	},
-	meals: {
-	    simple: 0,
-	    fine: 0,
-	    lavish: 0,
-	},
-	logs: {
-	    soft: 0,
-	    hard: 0
-	},
-	planks: {
-	    soft: 0,
-	    hard: 0
-	},
-	compositeWood: 0,
-	stone: {
-	    rocks: 0,
-	    chuncks: 0,
-	    blocks: 0,
-	    bricks: 0
-	},
-	ore: {
-	    iron: 0,
-	    copper: 0,
-	    tin: 0,
-	    gold: 0,
-	    silver: 0
-	},
-	ingots: {
-	    iron: 0,
-	    copper: 0,
-	    tin: 0,
-	    bronze: 0,
-	    gold: 0,
-	    silver: 0
-	},
-	tools: {
-	    stone: 0,
-	    bronze: 0,
-	    iron: 0,
-	    steel: 0
-	},
-	weapons: {
-	    swords: 0,
-	    spears: 0,
-	    maces: 0,
-	    bows: 0
-	},
-	armor: {
-	    cloth: 0,
-	    leather: 0,
-	    bronze: 0,
-	    iron: 0,
-	    steel: 0
-	},
-	fuel: {
-	    charcoal: 0,
-	    coal: 0,
-	    coke: 0,
-	},
-	fabric: {
-	    cloth: 0,
-	    leather: 0,
-	    silk: 0,
+	'path': 'street'
+    },
+    'jobs': {
+	'job title': {
+	    'level': 0,
+	    'xp': 0,
+	    'ding': 100,
+	    'income': 10
 	}
+	
+    },
+    'skills': {
+	'skill name': {
+	    'level': 0,
+	    'xp': 0,
+	    'ding': 100,
+	},
+    },
+    'inventory': {
+	'item name': 0,
+    },
+    shop: {
+	
     }
-    localStorage.setItem("thriveResourceData", JSON.stringify(thriveResourceData));
+};
+
+function loadGame(){
+    gameData = JSON.parse(localStorage.getItem('thriveData'));
+
+    if(gameData){
+	// call updateUIValues passing in player keys array
+	// call updateUIValues passing in stats keys array
+	// call updateUIValues passing in timeslots keys array
+    } else {
+	startGame()
+    }
 }
 
-let storedBuildingData = localStorage.getItem("thriveBuildingData");
-if(storedBuildingData){
-    thriveBuildingData = storedBuildingData;
-} else {
-    thriveBuildingData = {
-	vegetableFarms: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	    levelUpTimer: null,
-	},
-	fruitFarms: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	clothFarms: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	ironMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	copperMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	tinMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	coalMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	goldMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	silverMines: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	lumberCamps: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	quarry: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	ironSmelters: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	tinSmelters: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	copperSmetlers: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	goldSmelters: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	silverSmelters: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	bronzeSmelters: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	sawMills: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	Bakeries: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	Stills: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	kitchens: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	carpentryShop: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	masonsShop: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	bowyers:{
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	weaponSmiths: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-	armorSmiths: {
-	    level: 0,
-	    workers: 0,
-	    levelUpTime: null,
-	},
-    }
-    localStorage.setItem("thriveBuildingData", JSON.stringify(thriveBuildingData));
+function startGame(){
+    drawModal();
+    populateData();
+    
 }
 
+function populateData(dataSet = 'basic'){
+    // how should dataSets be handled
+    if (dataSet == 'basic'){
+	
+    } else {
+	
+    }
+}
 
+function updateUIValue(keys){
+    // iterate through keys array and set text content with values
+}
+
+function drawModal(type = 'start'){
+    // should utilize fragments
+    if (type == 'start'){
+	// create modal for initialization inputs
+    } else if (type == 'event'){
+	// instantiate an event
+	// create modal populated with event data
+    } else if (type == 'death'){
+	// instantiate a death
+	// populate modal with death data
+    }
+}
+
+// interval callback for tracking hours
+function updateTimeSlot(){
+    // update the active time slot
+    // disable ability to change value of active time slot
+    // evaluate the value of the active time slot
+    // update values of hunger, thirst, energy gain/loss
+    // update value of activeXpgain (how to handle what xp should grow during a time slot)
+    randomEvent();
+}
+
+// interval callback for passive xp
+function experianceGain(){
+    randomEvent();
+}
+
+// interval callback for random events
+function randomEvent(){
+    // should call 
+}
+
+loadGame();
+
+setInterval(1000, experianceGain());
+setInterval(60000, updateTimeSlot());
+
+// if every 1m == 1h then 24m == 1d
+// 24m * 365 == 1y
+// will want a variable to track the day of the year
+// this will be evaluated every day to update

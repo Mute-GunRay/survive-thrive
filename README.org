@@ -28,11 +28,13 @@ An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress
 	- [X] skills
 	- [X] jobs
     - [X] footer for "promo" blocks
-- [ ] Javascript framing
-  - [ ] main functionality:
+- [-] Javascript framing
+  - [-] main functionality:
     - [ ] timer functions
     - [ ] creating modals
-    - [ ] updating values
+    - [X] updating values
+    - [ ] populating page
+    - [X] checking for save data
 - [ ] CSS framing
   - [ ] placement of blocks
   - [ ] colors for all elements
