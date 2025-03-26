@@ -2,57 +2,59 @@
 An idle RPG inspired by the anime Solo Leveling, and idle games such as Progress Knight, Midnight Idle, and others
 
 * Development
-** Phase 1
-- [X] HTML framing
-  - [X] header contianing:
-    - [X] Player name
-    - [X] Player Job &  level
-    - [X] Player HP & SP
-    - [X] Player Money
-  - [X] secondary header bar containg:
-    - [X] hunger
-    - [X] thrist
-    - [X] energy
-  - [X] main containing:
-    - [X] side bar with player schedule
-    - [X] side bar with player stats:
-      - [X] strength
-      - [X] charisma
-      - [X] agility
-      - [X] endurance
-      - [X] intelligence
-    - [X] center container containing:
-      - [X] blocks for:
-	- [X] store
-	- [X] inventory
-	- [X] skills
-	- [X] jobs
-    - [X] footer for "promo" blocks
-- [-] Javascript framing
-  - [-] main functionality:
-    - [ ] timer functions
-    - [ ] creating modals
-    - [X] updating values
-    - [ ] populating page
-    - [X] checking for save data
+** Version 0.0.1 requirments
+- [-] HTML framing
+  - [-] header block:
+    - [-] top block
+      - [X] name
+	this should be a text input block so player can change the value at will
+      - [ ] stats:
+	- [ ] 
+    - [ ] lower block
+      these should all appear as progress bars with numerical values before the bar
+      - [ ] HP
+      - [ ] Hunger
+      - [ ] Thirst
+      - [ ] Energy
+  - [ ] main block:
+    - [ ] schedule block
+      time slots should be by hour
+      restrict slots whose tasks can be changed based on active jobs
+    - [ ] messages block
+      this should appear in the center of the screen
+      - [ ] ambiant messages
+	random thoughts, sounds, senses, etc.
+      - [ ] text messages
+	for notifications
+    - [ ] skills block
+      - [ ] personal (i.e. concentration, spatial awareness, etc.)
+      - [ ] combat (i.e brawling, various weapon proficencies, etc.)
+      - [ ] magic (i.e. alchemy, casting, enchanting, etc.)
+      - [ ] activity (i.e. weightlifting, running, etc.)
+    - [ ] work block
+      - [ ] part time ("regular" jobs)
+      - [ ] gig (one off work that will only take 1 day)
+      - [ ] contract (one off work that will take more than 1 day)
+      - [ ] freelance (non traditional jobs available based on player skills and stats)
+    - [ ] inventory block
+      - [ ] gear (equipable things, and some consumables)
+      - [ ] personal (non equipable things small enough to carry around)
+      - [ ] home (xp boosting things and things that unlock some jobs and tasks)
+      - [ ] shoping (only available during non working hours)
+  - [X] footer block:
+- [ ] Javascript framing
+  - [ ] main functionality:
+    - [ ] classes:
+      - [ ] player
+      - [ ] job
+      - [ ] skill
+      - [ ] inventory
+    - [ ] index functions:
+      - [ ] load game data
+      - [ ] instantiate new game data
+      - [ ] handle intervals
+    - [ ] updating html
 - [ ] CSS framing
   - [ ] placement of blocks
   - [ ] colors for all elements
   - [ ] fonts for all elements
-** Phase 2
-- [ ] HTML details
-  - [ ] select boxes for time slots
-  - [ ] tab bar for center container
-- [ ] Javascript Details
-  - [ ] populating initial center blocks
-  - [ ] checking player stats and unlocking jobs, items, skills, etc accordingly
-  - [ ] firing random events
-- [ ] CSS details
-  - [ ] extract global variables
-  - [ ] add pseudo classes for effects
-** Phase 3
-- [ ] Write story events
-- [ ] Add Javascript for incrementing specific xp based on activities (what is done in timeslots)
-- [ ] add HTML blocks for notifications
-- [ ] Review Javascript with a focus on refactors
-- [ ] Begin Long term testing of game
