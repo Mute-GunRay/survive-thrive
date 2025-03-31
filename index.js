@@ -68,8 +68,14 @@ function tickHour(){
 }
 
 function populateTaskOptions(){
-    let taskSelects = document.getElementsByClassName('tasks');
-    console.log(taskSelects);
+    let taskSelects = Array.from(document.getElementsByClassName('tasks'));
+    for (select in taskSelects) {
+	for (task in basicTasks) {
+	    let option = document.createElement('option');
+	    option.textContent = task;
+	    select.appendChild(option);
+	}
+    }
 }
 
 populateTaskOptions();
