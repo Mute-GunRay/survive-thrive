@@ -34,5 +34,5 @@ function tickHour(){
     document.getElementById(`task-${currentHour}`).disabled = true;
 }
 
-setInterval(tickMinute(), 1000);
-setInterval(tickHour(), 60000);
+setInterval(tickMinute, 1000);
+setInterval(tickHour, 60000);
