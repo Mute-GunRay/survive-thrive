@@ -42,8 +42,12 @@ function tickMinute(){
 	currentMinute = currentMinute + 1;
     }
     
-    if (currentHour < 10 && currentMinute < 10) {
-	currentTime.textContent = `0${currentHour}:0${currentMinute}`;
+    if (currentHour < 10) {
+	if (currentMinute < 10) {
+	    currentTime.textContent = `0${currentHour}:0${currentMinute}`;   
+	} else {
+	    currentTime.textContent = `0${currentHour}:${currentMinute}`;
+	}
     } else {
 	currentTime.textContent = `${currentHour}:${currentMinute}`;
     }
