@@ -19,6 +19,8 @@ function tickMinute(){
     } else {
 	currentTime.textContent = `${currentHour}:${currentMinute}`;
     }
+
+    console.log('minute ticked');
 }
 
 function tickHour(){
