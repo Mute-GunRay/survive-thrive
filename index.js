@@ -6,6 +6,7 @@ let currentHour = 0;
 
 
 function tickMinute(){
+    console.log('ticking minutes');
     if (currentMinute == 59) {
 	currentMinute = 0;
     } else {
