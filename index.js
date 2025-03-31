@@ -9,6 +9,7 @@ function tickMinute(){
     console.log('ticking minutes');
     if (currentMinute == 59) {
 	currentMinute = 0;
+	tickHour();
     } else {
 	currentMinute = currentMinute + 1;
     }
@@ -33,4 +34,3 @@ function tickHour(){
 }
 
 setInterval(1000, tickMinute());
-setInterval(60000, tickHour());
