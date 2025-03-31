@@ -69,13 +69,7 @@ function tickHour(){
 
 function populateTaskOptions(){
     let taskSelects = Array(document.getElementsByClassName('tasks'));
-    for (select in taskSelects){
-	for (task in basicTasks){
-	    let option = document.createElement('option');
-	    option.textContent = task;
-	    select.appendChild(task);
-	}
-    }  
+    console.log(taskSelects);
 }
 
 populateTaskOptions();
