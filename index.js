@@ -1,3 +1,5 @@
+console.log("Hello World!")
+
 let currentTime = document.getElementById('current-time');
 let currentMinute = 0
 let currentHour = 0;
