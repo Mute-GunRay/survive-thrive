@@ -9,7 +9,6 @@ function tickMinute(){
     console.log('ticking minutes');
     if (currentMinute == 59) {
 	currentMinute = 0;
-	tickHour();
     } else {
 	currentMinute = currentMinute + 1;
     }
@@ -35,4 +34,5 @@ function tickHour(){
     document.getElementById(`task-${currentHour}`).disabled = true;
 }
 
-setInterval(1000, tickMinute());
+setInterval(tickMinute(), 1000);
+setInterval(tickHour(), 60000);
