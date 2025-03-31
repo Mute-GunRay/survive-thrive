@@ -4,6 +4,35 @@ let currentTime = document.getElementById('current-time');
 let currentMinute = 0
 let currentHour = 0;
 
+let basicTasks = ['sleep', 'work', 'exercise', 'recreation'];
+
+let schedule = {
+    monday: [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'exercise',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'exercise',
+	'recreation',
+	'recreation',
+	'recration',
+	'sleep',
+    ]
+}
 
 function tickMinute(){
     console.log('ticking minutes');
@@ -33,6 +62,19 @@ function tickHour(){
 
     document.getElementById(`task-${currentHour}`).disabled = true;
 }
+
+function populateTaskOptions(){
+    let taskSelects = Array(document.getElementsByClassName('tasks'));
+    for (select in taskSelects){
+	for (task in basicTasks){
+	    let option = document.createElement('option');
+	    option.textContent = task;
+	    select.appendChild(task);
+	}
+    }  
+}
+
+populateTaskOptions();
 
 setInterval(tickMinute, 1000);
 setInterval(tickHour, 60000);
