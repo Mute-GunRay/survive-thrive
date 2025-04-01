@@ -226,6 +226,7 @@ function tickHour(){
 }
 
 function populateTaskOptions(){
+    
     taskSelects.forEach(select => {
 	basicTasks.forEach(task => {
 	    let option = document.createElement('option');
@@ -237,6 +238,8 @@ function populateTaskOptions(){
 
 function setDailySchedule() {
     let dailySchedule = schedule[currentDay];
+    let days = Array.from(document.getElementById('days').children);
+    days[currentDay].selected = true;
     taskSelects.forEach((hour, index) => {
 	let options = Array.from(hour.children);
 	options.forEach((option) => {
