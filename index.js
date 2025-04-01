@@ -1,21 +1,21 @@
-console.log("Hello World!")
-
 let currentTime = document.getElementById('current-time');
-let currentMinute = 0
+let currentMinute = 0;
 let currentHour = 0;
+let currentDay = 0;
 
 let basicTasks = ['sleep', 'work', 'exercise', 'recreation'];
 
-let schedule = {
-    monday: [
+let taskSelects = Array.from(document.getElementsByClassName('tasks'));
+
+let schedule = [
+    [
+	'sleep',
 	'sleep',
 	'sleep',
 	'sleep',
 	'sleep',
 	'sleep',
 	'exercise',
-	'exercise',
-	'work',
 	'work',
 	'work',
 	'work',
@@ -29,13 +29,163 @@ let schedule = {
 	'exercise',
 	'recreation',
 	'recreation',
-	'recration',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
 	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'work',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
+    ],
+    [
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'sleep',
+	'exercise',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'free',
+	'exercise',
+	'recreation',
+	'recreation',
+	'free',
+	'free',
+	'sleep'
     ]
-}
+]
 
 function tickMinute(){
-    console.log('ticking minutes');
     if (currentMinute == 59) {
 	currentMinute = 0;
     } else {
@@ -51,15 +201,19 @@ function tickMinute(){
     } else {
 	currentTime.textContent = `${currentHour}:${currentMinute}`;
     }
-
-    console.log('minute ticked');
 }
 
 function tickHour(){
     document.getElementById(`task-${currentHour}`).disabled = false
 
     if (currentHour == 23) {
-	currentHour = 0
+	currentHour = 0;
+	if ( currentDay < 6) {
+	    currentDay = currentDay + 1;
+	} else {
+	    currentDay = 0
+	}
+	setDailySchedule();
     }
 
     currentHour = currentHour + 1;
@@ -68,13 +222,23 @@ function tickHour(){
 }
 
 function populateTaskOptions(){
-    let taskSelects = Array.from(document.getElementsByClassName('tasks'));
     taskSelects.forEach(select => {
 	basicTasks.forEach(task => {
 	    let option = document.createElement('option');
 	    option.textContent = task;
 	    select.appendChild(option);
 	})
+    })
+}
+
+function setDailySchedule() {
+    // for each day in schedule
+    // for each select in task selects
+    // for each option in task select options array
+    // if value of option is equal to value of the time slot for that day
+    // set selected attribute and break out of loop
+    schedule.forEach((day, index) => {
+	console.log(index);
     })
 }
 
