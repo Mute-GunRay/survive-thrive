@@ -7,181 +7,56 @@ let basicTasks = ['sleep', 'work', 'exercise', 'recreation'];
 
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
+let player = {
+    'health': 100,
+    'energy': 100,
+    'hunger': 100,
+    'thirst': 100,
+}
+
 let schedule = [
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'sleep', 'exercise', 'work', 'work', 'work',
+	'work', 'work', 'work', 'work', 'work', 'work',
+	'work', 'exercise', 'recreation', 'recreation',
+	'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'exercise', 'work', 'work', 'work', 'work', 'work', 'work',
+	'work', 'work', 'work', 'work', 'exercise', 'recreation',
+	'recreation', 'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'exercise', 'work', 'work', 'work', 'work', 'work', 'work',
+	'work', 'work', 'work', 'work', 'exercise', 'recreation',
+	'recreation', 'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'exercise', 'work', 'work', 'work', 'work', 'work', 'work',
+	'work', 'work', 'work', 'work', 'exercise', 'recreation',
+	'recreation', 'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'work',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'exercise', 'work', 'work', 'work', 'work', 'work',
+	'work', 'work', 'work', 'work', 'work', 'exercise',
+	'recreation', 'recreation', 'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'exercise',
+	'free', 'free', 'free', 'free', 'free', 'free', 'free',
+	'free', 'free', 'free', 'exercise', 'recreation',
+	'recreation', 'free', 'free', 'sleep'
     ],
     [
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'sleep',
-	'exercise',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'free',
-	'exercise',
-	'recreation',
-	'recreation',
-	'free',
-	'free',
-	'sleep'
+	'sleep', 'sleep', 'sleep', 'sleep', 'sleep', 'sleep',
+	'exercise', 'free', 'free', 'free', 'free', 'free', 'free',
+	'free', 'free', 'free', 'exercise', 'recreation',
+	'recreation', 'free', 'free', 'sleep'
     ]
 ]
 
@@ -251,8 +126,16 @@ function setDailySchedule() {
     })
 }
 
-populateTaskOptions();
-setDailySchedule();
+function start() {
+    document.getElementById('health').textContent = player['health'];
+    document.getElementById('energy').textContent = player['energy'];
+    document.getElementById('hunger').textContent = player['hunger'];
+    document.getElementById('thirst').textContent = player['thirst'];
+    populateTaskOptions();
+    setDailySchedule();
+}
+
+start();
 
 setInterval(tickMinute, 1000);
 setInterval(tickHour, 60000);
