@@ -199,7 +199,11 @@ function tickMinute(){
 	    currentTime.textContent = `0${currentHour}:${currentMinute}`;
 	}
     } else {
-	currentTime.textContent = `${currentHour}:${currentMinute}`;
+	if (currentMinute < 10) {
+	 currentTime.textContent = `${currentHour}:0${currentMinute}`;   
+	} else {
+	    currentTime.textContent = `${currentHour}:${currentMinute}`;
+	}
     }
 }
 
