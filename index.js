@@ -245,6 +245,7 @@ function setDailySchedule() {
 }
 
 populateTaskOptions();
+setDailySchedule();
 
 setInterval(tickMinute, 1000);
 setInterval(tickHour, 60000);
