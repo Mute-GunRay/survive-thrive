@@ -211,12 +211,12 @@ function tickHour(){
 	if ( currentDay < 6) {
 	    currentDay = currentDay + 1;
 	} else {
-	    currentDay = 0
+	    currentDay = 0;
 	}
 	setDailySchedule();
+    } else {
+	currentHour = currentHour + 1;
     }
-
-    currentHour = currentHour + 1;
 
     document.getElementById(`task-${currentHour}`).disabled = true;
 }
@@ -232,13 +232,15 @@ function populateTaskOptions(){
 }
 
 function setDailySchedule() {
-    // for each day in schedule
-    // for each select in task selects
-    // for each option in task select options array
-    // if value of option is equal to value of the time slot for that day
-    // set selected attribute and break out of loop
-    schedule.forEach((day, index) => {
-	console.log(index);
+    let dailySchedule = schedule[currentDay];
+    taskSelects.forEach((hour, index) => {
+	let options = Array.from(hour.children);
+	options.forEach((option) => {
+	    if (option.textContent == dailySchedule[index]) {
+		option.selected = true;
+		return;
+	    }
+	})
     })
 }
 
