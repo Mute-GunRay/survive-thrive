@@ -1,4 +1,3 @@
-let currentTime = document.getElementById('current-time');
 let currentMinute = 0;
 let currentHour = 0;
 let currentDay = 0;
@@ -8,10 +7,13 @@ let basicTasks = ['sleep', 'work', 'exercise', 'recreation'];
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = {
-    'health': 100,
-    'energy': 100,
-    'hunger': 100,
-    'thirst': 100,
+    'health': [100, 100],
+    'energy': [100, 100],
+    'hunger': [100, 100],
+    'thirst': [100, 100],
+    'energy modifier': 0.1,
+    'hunger modifier': 0.1,
+    'thirst modifier': 0.1,
 }
 
 let schedule = [
@@ -67,19 +69,14 @@ function tickMinute(){
 	currentMinute = currentMinute + 1;
     }
     
-    if (currentHour < 10) {
-	if (currentMinute < 10) {
-	    currentTime.textContent = `0${currentHour}:0${currentMinute}`;   
-	} else {
-	    currentTime.textContent = `0${currentHour}:${currentMinute}`;
-	}
-    } else {
-	if (currentMinute < 10) {
-	 currentTime.textContent = `${currentHour}:0${currentMinute}`;   
-	} else {
-	    currentTime.textContent = `${currentHour}:${currentMinute}`;
-	}
-    }
+    tickResource('energy', 0.1);
+    tickResource('hunger', 0.1);
+    tickResource('thirst', 0.1);
+
+    updateUI('energy', player['energy']);
+    updateUI('hunger', player['hunger']);
+    updateUI('thirst', player['thirst']);
+    updateUI('current-time', formatCurrentTime());
 }
 
 function tickHour(){
@@ -101,7 +98,6 @@ function tickHour(){
 }
 
 function populateTaskOptions(){
-    
     taskSelects.forEach(select => {
 	basicTasks.forEach(task => {
 	    let option = document.createElement('option');
@@ -126,11 +122,37 @@ function setDailySchedule() {
     })
 }
 
+function tickResource(resource, amount){
+    player[resource] = player[resource] - amount;
+}
+
+function formatCurrentTime(){
+    let formattedMinute;
+    let formattedHour;
+
+    if(currentMinute < 10){
+	formattedMinute = `0${currentMinute}`;
+    } else {
+	formattedMinute = toString(currentMinute);
+    }
+    if(currentHour < 10){
+	formattedHour = `0${currentHour}`;
+    } else {
+	formattedHour = toString(currentHour);
+    }
+
+    return `${formattedMinute}:${formattedHour}`;
+}
+
+function updateUI(element, value){
+    document.getElementById(element).textContent = value;
+}
+
 function start() {
-    document.getElementById('health').textContent = player['health'];
-    document.getElementById('energy').textContent = player['energy'];
-    document.getElementById('hunger').textContent = player['hunger'];
-    document.getElementById('thirst').textContent = player['thirst'];
+    document.getElementById('health').textContent = player['health'][0];
+    document.getElementById('energy').textContent = player['energy'][0];
+    document.getElementById('hunger').textContent = player['hunger'][0];
+    document.getElementById('thirst').textContent = player['thirst'][0];
     populateTaskOptions();
     setDailySchedule();
 }
