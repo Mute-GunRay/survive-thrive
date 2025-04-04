@@ -123,7 +123,7 @@ function setDailySchedule() {
 }
 
 function tickResource(resource, amount){
-    player[resource][0] = player[resource][0] - amount;
+    player[resource][0] = (player[resource][0] - amount).toFixed();
 }
 
 function formatCurrentTime(){
