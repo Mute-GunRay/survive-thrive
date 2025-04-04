@@ -133,12 +133,12 @@ function formatCurrentTime(){
     if(currentMinute < 10){
 	formattedMinute = `0${currentMinute}`;
     } else {
-	formattedMinute = toString(currentMinute);
+	formattedMinute = currentMinute.toString();
     }
     if(currentHour < 10){
 	formattedHour = `0${currentHour}`;
     } else {
-	formattedHour = toString(currentHour);
+	formattedHour = currentHour.toString();
     }
 
     return `${formattedHour}:${formattedMinute}`;
