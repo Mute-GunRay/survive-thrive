@@ -141,7 +141,7 @@ function formatCurrentTime(){
 	formattedHour = toString(currentHour);
     }
 
-    return `${formattedMinute}:${formattedHour}`;
+    return `${formattedHour}:${formattedMinute}`;
 }
 
 function updateUI(element, value){
