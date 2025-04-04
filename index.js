@@ -69,9 +69,9 @@ function tickMinute(){
 	currentMinute = currentMinute + 1;
     }
     
-    tickResource('energy', 0.1);
-    tickResource('hunger', 0.1);
-    tickResource('thirst', 0.1);
+    tickResource('energy', 0.01);
+    tickResource('hunger', 0.01);
+    tickResource('thirst', 0.01);
 
     updateUI('energy', player['energy']);
     updateUI('hunger', player['hunger']);
@@ -123,6 +123,7 @@ function setDailySchedule() {
 }
 
 function tickResource(resource, amount){
+    console.log(player[resource] - amount);
     player[resource][0] = player[resource][0] - amount;
 }
 
