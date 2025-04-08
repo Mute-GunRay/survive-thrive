@@ -8,12 +8,9 @@ let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = {
     'health': [100, 100],
-    'energy': [100, 100],
-    'hunger': [100, 100],
-    'thirst': [100, 100],
-    'energy modifier': 0.1,
-    'hunger modifier': 0.1,
-    'thirst modifier': 0.1,
+    'energy': [0.01, 100, 100],
+    'hunger': [0.01, 100, 100],
+    'thirst': [0.01, 100, 100],
     'mind': [0, 0, 100],
     'body': [0, 0, 100],
     'spirit': [0, 0, 100],
@@ -95,8 +92,9 @@ let skills = [
 ]
 
 function tickMinute(){
-    currentMinute = currentMinute == 59 ? 0 : currentMinute + 1
-    
+    currentMinute == 59 ? currentMinute = 0 : currentMinute++;
+
+    // extract these invocations into a seperate function
     tickResource('energy', 0.01);
     tickResource('hunger', 0.01);
     tickResource('thirst', 0.01);
@@ -109,15 +107,8 @@ function tickMinute(){
 
 function tickHour(){
     document.getElementById(`task-${currentHour}`).disabled = false;
-
-    if (currentHour == 23) {
-	currentHour = 0;
-	currentDay = currentDay < 6 ? currentDay + 1 : 0
-	setDailySchedule();
-    } else {
-	currentHour = currentHour + 1;
-    }
-
+    currentHour == 23 ? currentHour = 0 : currentHour++;
+    currentHour == 0 ? setDailySchedule() : null;
     document.getElementById(`task-${currentHour}`).disabled = true;
 }
 
@@ -132,8 +123,7 @@ function populateTaskOptions(){
 }
 
 function setDailySchedule() {
-    // test that selected day changes properly
-    // suspect that it does not
+    currentDay < 6 ? currentDay++ : currentDay = 0
     let dailySchedule = schedule[currentDay];
     let days = Array.from(document.getElementById('days').children);
     days[currentDay].selected = true;
@@ -148,6 +138,9 @@ function setDailySchedule() {
 }
 
 function tickResource(resource, amount){
+    // if hunger is below 50% update energy delta
+    // if thirst is below 50% update energy delta
+    // need to create logic based on current activity
     player[resource][0] = (player[resource][0] - amount).toFixed(2);
 }
 
