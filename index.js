@@ -89,15 +89,21 @@ let skills = [
 	'weight lifting', 'running', 'flexibility', 'balance',
 	'corrdination', 'endurance',
     ],
-]
+];
+
+let activities = [
+    [ // energy gain actions
+	'sleep', 'rest', ''
+    ]
+];
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
 
     // extract these invocations into a seperate function
-    tickResource('energy', 0.01);
-    tickResource('hunger', 0.01);
-    tickResource('thirst', 0.01);
+    tickResource('energy');
+    tickResource('hunger');
+    tickResource('thirst');
 
     updateUI('energy', player['energy'][0]);
     updateUI('hunger', player['hunger'][0]);
@@ -137,11 +143,12 @@ function setDailySchedule() {
     })
 }
 
-function tickResource(resource, amount){
-    // if hunger is below 50% update energy delta
-    // if thirst is below 50% update energy delta
-    // need to create logic based on current activity
-    player[resource][0] = (player[resource][0] - amount).toFixed(2);
+function tickResource(resource){
+    player[resource][1] = (player[resource][1] - player[resource][0]).toFixed(2);
+}
+
+function calculateResourceDelta(resource){
+    
 }
 
 function formatCurrentTime(){
