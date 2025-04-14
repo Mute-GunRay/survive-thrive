@@ -76,7 +76,7 @@ skills["haggle"] = new Skill({
     catagory: 'Social',
     primary_stat: 'spirit'
 })
-skills["communicate"] = new Skills({
+skills["communicate"] = new Skill({
     name: 'Communicate',
     description: 'effectively talk to others',
     catagory: 'Social',
@@ -333,3 +333,5 @@ skills["evasion"] = new Skill({
     catagory: 'Physical',
     primary_stat: 'body'
 })
+
+export {skills};
