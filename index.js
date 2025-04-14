@@ -92,8 +92,11 @@ let skills = [
 ];
 
 let activities = [
-    [ // energy gain actions
-	'sleep', 'rest', ''
+    [ // general activities
+	'sleeping', 'working', 'exercising', 'free', 'study'
+    ],
+    [ // physical activities
+	'run', 'lift weights', 'play sports', 
     ]
 ];
 
