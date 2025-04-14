@@ -62,35 +62,6 @@ let schedule = [
     ]
 ]
 
-// what are some basic skills that fit within the setting of this game?
-let skills = [
-    [ // these are social skills
-	'charm', 'intimidate', 'calm', 'haggle', 'communication',
-	'leadership', 'empathy', 'listening',
-    ],
-    [ // these are tech skills
-	'programming', 'network architecture', 'data mining', 'data analytics',
-	'network security', 'circuit design', 
-    ],
-    [ // these are fighting skills
-	'unarmed', 'evasion', 'small arms', 'rifles', 'heavy guns',
-	'small blades', 'straight blades', 'curved blades', 'shields',
-	'small bows', 'large bows', 'heavy bows', 
-    ],
-    [ // these are knowledge skills
-	'reading', 'writing', 'comprehension', 'recall', 'memory', 'observation',
-	'logic', 'discipline', 'research'
-    ],
-    [ // these are magic skills
-	'casting', 'theory', 'alchemy', 'spell crafting', 'elemental',
-	'psychic', 'mana control', 'astrology', 'augury', 
-    ],
-    [ // these are physical skills
-	'weight lifting', 'running', 'flexibility', 'balance',
-	'corrdination', 'endurance',
-    ],
-];
-
 let activities = [
     [ // general activities
 	'sleeping', 'working', 'exercising', 'free', 'study'
