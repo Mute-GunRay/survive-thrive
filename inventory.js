@@ -1,16 +1,8 @@
 
-const starting_equipment = {};
-const starting_consumables = {};
-const starting_tools = {};
-
-const all_equipment = generate_all_equipment();
-const all_consumables = generate_all_consumables();
-const all_tools = generate_all_tools();
-
 class Item {
     constructor({
 	item_name = 'item',
-	item_cost = '0',
+	item_cost = 0,
 	item_descriptor = 'an item',
 	effect_type = null,
 	effect_modifier = null,
@@ -108,8 +100,461 @@ class Inventory{
     }
 }
 
-function generate_all_equipment() {}
-function generate_all_consumables() {}
-function generate_all_tools(){}
+function generate_all_equipment() {
+    let equipables = {}
 
-export { Inventory };
+    equipables["pistol"] = new Item(
+	"hand gun",
+	300,
+	"A small caliber hand gun",
+	"weapon",
+	0.5,
+	true,
+	true,
+	"equipment",
+    )
+
+    equipables["battle rifle"] = new Item(
+	"semi-automatic rifle",
+	300,
+	"A medium caliber semi-automatic rifle",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["machine gun"] = new Item(
+	"machine gun",
+	300,
+	"A large caliber fully-automatic rifle",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+    
+    equipables["combat knife"] = new Item(
+	"combat knife",
+	200,
+	"A knife designed for combat",
+	"weapon",
+	0.25,
+	true,
+	true,
+	"equipment",
+    )
+
+    equipables["straight short-sword"] = new Item(
+	"short straight sword",
+	500,
+	"a one handed straight sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["straight long-sword"] = new Item(
+	"long sword",
+	800,
+	"A two handed straight sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["straight great-sword"] = new Item(
+	"straight great-sword",
+	300,
+	"A massive straight sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["curved short-sword"] = new Item(
+	"curved short-sword",
+	300,
+	"A one handed curved sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["curved long-sword"] = new Item(
+	"curved long-sword",
+	300,
+	"A two handed curved sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["curved great-sword"] = new Item(
+	"curved great-sword",
+	300,
+	"A massive curved sword",
+	"weapon",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables[" basic helmet"] = new Item(
+	"basic helmet",
+	300,
+	"A medieval style combat helmet",
+	"armor",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["breast plate"] = new Item(
+	"breast plate",
+	300,
+	"A medieval style chest armor",
+	"armor",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["ballistic helmet"] = new Item(
+	"ballistic helmet",
+	300,
+	"A modern style combat helmet",
+	"armor",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    equipables["ballistic plate"] = new Item(
+	"ballistic plate",
+	300,
+	"A modern style chest armor",
+	"armor",
+	0.5,
+	false,
+	true,
+	"equipment",
+    )
+
+    return equipables;
+}
+function generate_all_consumables() {
+    let consumables = {}
+
+    consumables["snack food"] = new Item(
+	"snack food",
+	5,
+	"food for when your not all that hungry",
+	"food",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["bread"] = new Item(
+	"bread",
+	10,
+	"a full loaf of fresh bread",
+	"food",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["instant meal"] = new Item(
+	"instant meal",
+	10,
+	"a full meal for when your in a hurry",
+	"food",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["cooked meal"] = new Item(
+	"cooked meal",
+	10,
+	"a nice wholesome meal",
+	"food",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["banages"] = new Item(
+	"bandages",
+	10,
+	"a simple roll of medical bandages for treating superficial injuries",
+	"medicine",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["pain killers"] = new Item(
+	"pain killers",
+	10,
+	"a box of pills for easing pain from superficial of minor injuries",
+	"medicine",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["first aid kit"] = new Item(
+	"first aid kit",
+	10,
+	"a full kit for treating minor injuries",
+	"medicine",
+	0.01,
+	false,
+	false,
+	"consumable"
+    )
+
+    consumables["minor potion"] = new Item(
+	"minor potion",
+	10,
+	"a potion for instantly healing superficial wounds",
+	"medicine",
+	0.01,
+	false,
+	false,
+	"consumable"
+    )
+
+    consumables["basic potion"] = new Item(
+	"basic potion",
+	10,
+	"a potion for instantly healing minor wounds",
+	"medicine",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+
+    consumables["major potion"] = new Item(
+	"major potion",
+	10,
+	"a potion for iinstatly healing major wounds",
+	"medicine",
+	0.01,
+	true,
+	false,
+	"consumable"
+    )
+    
+    return consumables;
+}
+function generate_all_tools(){
+    let tools = {};
+
+    tools["mobile phone"] = new Item(
+	"mobile phone",
+	100,
+	"a basic phone to bring with you",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["smart phone"] = new Item(
+	"smart phone",
+	500,
+	"a computer in your pocket, it even makes calls",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["basic tablet"] = new Item(
+	"basic tablet",
+	100,
+	"a simple tablet for reading ebooks and take notes",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["deluxe tablet"] = new Item(
+	"delux tablet",
+	800,
+	"a smart phone, but bigger",
+	"digital",
+	0,
+	false,
+	false,
+	"tools"
+    )
+
+    tools["budget desktop computer"] = new Item(
+	"desktop computer",
+	100,
+	"a basic at home computer",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["deluxe desktop computer"] = new Item(
+	"deluxe desktop computer",
+	100,
+	"a powerful home computer, now with more ram",
+	"digital",
+	0,
+	false,
+	false,
+	"tools"
+    )
+
+    tools["budget laptop"] = new Item(
+	"budget laptop",
+	100,
+	"a basic computer that you can take with you",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["deluxe laptop"] = new Item(
+	"deluxe laptop",
+	100,
+	"a powerful computer for computing on the go",
+	"digital",
+	0,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["weight lifting set"] = new Item(
+	"weight lifting set",
+	100,
+	"a set of basic set of weights for exercising",
+	"exercise",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["yoga mat"] = new Item(
+	"yoga mat",
+	100,
+	"a mat for doing yoga",
+	"exercise",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["treadmill"] = new Item(
+	"treadmill",
+	100,
+	"a machine for running in place",
+	"exercise",
+	0.1,
+	false,
+	false,
+	"tools"
+    )
+
+    tools["grammer books"] = new Item(
+	"grammer books",
+	100,
+	"a collection of books for studying language",
+	"learning",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["philosophy books"] = new Item(
+	"philosophy books",
+	100,
+	"a collection of books for studying philosophy",
+	"learning",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["computer books"] = new Item(
+	"computer books",
+	100,
+	"a collection of books for studying computer science",
+	"learning",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["math books"] = new Item(
+	"math books",
+	100,
+	"a collection of books for studying math",
+	"learning",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    tools["enginnering books"] = new Item(
+	"enginnering books",
+	100,
+	"a collection of books for studying enginnering",
+	"learning",
+	0.1,
+	true,
+	false,
+	"tools"
+    )
+
+    return tools;
+}
+
+export { Inventory, generate_all_consumables,
+	 generate_all_equipment, generate_all_tools };
