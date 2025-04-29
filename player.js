@@ -1,4 +1,5 @@
-import {skills} from './skills.js'
+import { skills } from './skills.js'
+import { Inventory } from './inventory.js'
 
 class Player {
     constructor({
@@ -7,8 +8,6 @@ class Player {
 	mind = [1, 0, 100, 1.1],
 	body = [1, 0, 100, 1.1],
 	spirit = [1, 0, 100, 1.1],
-	skills = {},
-	inventory = {},
 	activities = {},
 	schedule = {},
     }){
@@ -18,7 +17,7 @@ class Player {
 	this.body = body;
 	this.spirit = spirit;
 	this.skills = skills;
-	this.inventory = inventory;
+	this.inventory = new Inventory;
 	this.activities = activities;
 	this.schedule = schedule;
 	this.health = [(body[0]*100), (body[0]*100)];
@@ -73,3 +72,5 @@ class Player {
 	}
     }
 }
+
+export { Player };
