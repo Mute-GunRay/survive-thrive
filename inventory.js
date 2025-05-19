@@ -106,5 +106,3 @@ const items = [
     new Item("sneakers"),
     new Item("backpack"),
 ]
-
-export { items };
