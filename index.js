@@ -4,7 +4,7 @@ let currentDay = 0;
 
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
-let player = new Player();
+let player = new Player({});
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
