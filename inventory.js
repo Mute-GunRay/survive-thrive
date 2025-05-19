@@ -16,54 +16,6 @@ class Item {
 	this.is_equipable = is_equipable;
 	this.catagory = item_catagory;
     }
-
-    get item_name(){
-	return this.item_name;
-    }
-
-    set item_name(thing_name){
-	this.item_name = thing_name 
-    }
-
-    get cost(){
-	return this.cost;
-    }
-
-    set cost(cost){
-	this.cost = cost
-    }
-
-    get descriptor(){
-	return this.descriptor;
-    }
-
-    set descriptor(descriptor){
-	this.descriptor = descriptor
-    }
-
-    get effect_modifier(){
-	return this.effect_modifier;
-    }
-
-    set effect_modifier(modifier){
-	this.effect_modifier = modifier
-    }
-
-    get is_unlocked(){
-	return this.is_unlocked;
-    }
-
-    set is_unlocked(is_unlocked){
-	this.is_unlocked = is_unlocked
-    }
-
-    get is_equipable(){
-	return this.is_equipable;
-    }
-
-    set is_equipable(set_equiable){
-	this.is_equipable = set_equipable
-    }
 }
 
 const items = [
