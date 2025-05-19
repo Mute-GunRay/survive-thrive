@@ -6,7 +6,7 @@ let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = new Player({});
 
-document.getElementById("player_name").textContent = Player.player_name
+document.getElementById("player_name").value = Player.player_name
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
