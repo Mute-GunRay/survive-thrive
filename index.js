@@ -13,7 +13,7 @@ document.getElementById("player_spirit").textContent = player.spirit[0]
 document.getElementById("health").textContent = player.health[0]
 document.getElementById("energy").textContent = player.energy[0]
 document.getElementById("hunger").textContent = player.hunger[0]
-document.getElementById("hunger").textContent = player.thirst[0]
+document.getElementById("thirst").textContent = player.thirst[0]
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
