@@ -8,7 +8,7 @@ class Player {
 	activities = {},
 	schedule = {},
     }){
-	this.player_name = name;
+	this.player_name = player_name;
 	this.title = title;
 	this.mind = mind;
 	this.body = body;
