@@ -18,7 +18,11 @@ class Item {
     }
 
     get item_name(){
-	return this.name;
+	return this.item_name;
+    }
+
+    set item_name(){
+	return this.time_name
     }
 
     get cost(){
