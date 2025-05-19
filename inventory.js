@@ -21,7 +21,7 @@ class Item {
 	return this.item_name;
     }
 
-    set item_name(){
+    set item_name(name){
 	return this.time_name
     }
 
