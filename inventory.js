@@ -21,8 +21,8 @@ class Item {
 	return this.item_name;
     }
 
-    set item_name(name){
-	this.item_name = name 
+    set item_name(thing_name){
+	this.item_name = thing_name 
     }
 
     get cost(){
