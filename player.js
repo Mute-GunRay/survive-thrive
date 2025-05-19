@@ -1,6 +1,6 @@
 class Player {
     constructor({
-	name = "Player",
+	player_name = "Player",
 	title = "nobody",
 	mind = [1, 0, 100, 1.1],
 	body = [1, 0, 100, 1.1],
@@ -8,7 +8,7 @@ class Player {
 	activities = {},
 	schedule = {},
     }){
-	this.name = name;
+	this.player_name = name;
 	this.title = title;
 	this.mind = mind;
 	this.body = body;

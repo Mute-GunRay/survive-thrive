@@ -8,7 +8,7 @@ class Item {
 	is_equipable = false,
 	item_catagory = "consumable"
     }){
-	this.name = item_name;
+	this.item_name = item_name;
 	this.cost = item_cost;
 	this.descriptor = item_descriptor;
 	this.effect_modifier = effect_modifier;
@@ -17,7 +17,7 @@ class Item {
 	this.catagory = item_catagory;
     }
 
-    get name(){
+    get item_name(){
 	return this.name;
     }
 
