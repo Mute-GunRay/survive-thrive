@@ -1,5 +1,3 @@
-import { skills } from './skills.js'
-
 class Player {
     constructor({
 	name = "Player",

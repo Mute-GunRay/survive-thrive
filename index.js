@@ -1,5 +1,3 @@
-import { Player } from './player.js'
-
 let currentMinute = 0;
 let currentHour = 0;
 let currentDay = 0;
