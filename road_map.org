@@ -1,2 +1,72 @@
 
 * Current Phase
++ [ ] refactor the activities and schedule system
+  + [ ] refactor activity class
+    + [ ] properties
+      + [ ] activity_type:string
+      + [ ] season:string
+      + [ ] duration:number
+      + [ ] start_time:number
+      + [ ] cost:number
+      + [ ] activity_name:string
+      + [ ] activity_description:string
+      + [ ] is_unlocked:boolean
+      + [ ] skill_requirement:[skill_name:string, level:number]
+      + [ ] is_favorite:boolean
+      + [ ] attribute_requirement:[stat_name:string, level:number]
+  + [ ] remove the schedule elements from the page
+  + [ ] create an activities block with tabs for:
+    + [ ] Jobs
+    + [ ] recreation
+    + [ ] training
+    + [ ] technical
+    + [ ] crafting
++ [ ] refactor the inventory system
+  + [ ] create an inventory class with properties:
+    + [ ] equipment:[ [item_name:string, amount:number] ]
+    + [ ] consumables:[ [item_name:string, amount:number] ]
+    + [ ] materials:[ [item_name:string, amount:number] ]
++ [ ] refactor items system
+  + [ ] make the item class a base class
+    + [ ] properties
+      + [ ] item_name:string
+      + [ ] cost:number
+      + [ ] is_unlocked:boolean
+      + [ ] item_description:string
+      + [ ] crafting:object
+        + [ ] is_craftable:boolean
+        + [ ] stat_requirement:[stat_name:string, level:number]
+        + [ ] skill_requirement:[skill_name:string, level:number]
+        + [ ] recipe:object
+          + [ ] <material:string>:<amount:number>
+  + [ ] create classes that inherit from item
+    + [ ] equipment class
+      + [ ] properties
+        + [ ] equipped_slot
+        + [ ] equipment_type
+        + [ ] primary_attribute
+        + [ ] secondary_attribute
+        + [ ] is_equipped
+        + [ ] durability
+        + [ ] quality
+      + [ ] methods
+        + [ ] change_equipped_status
+        + [ ] change_durability
+        + [ ] change_quality
+    + [ ] consumable class
+      + [ ] properties
+        + [ ] stat_modifier
+        + [ ] stat_to_be_modified
+    + [ ] material class
+      + [ ] material_type
+      + [ ] material_tier
++ [ ] reimplement time system
++ [ ] create event framework
+  + [ ] helper function(s) to build a modal
+    + [ ] should utilize HTML fragments
+    + [ ] create an event base class
+      + [ ] properties
+        + [ ] skill_required:[skill_name:string, level:number]
+        + [ ] event_name:string
+        + [ ] event_body:string
+      + [ ] methods ???
