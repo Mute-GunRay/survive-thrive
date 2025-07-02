@@ -18,6 +18,7 @@ document.getElementById("thirst").textContent = player.thirst[0]
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
     player.energy = player.energy - 1;
+    console.log(player.energy)
 }
 
 function tickHour(){
