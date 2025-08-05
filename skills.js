@@ -333,3 +333,5 @@ skills["evasion"] = new Skill({
     catagory: 'Physical',
     primary_stat: 'body'
 })
+
+console.log(skills);
