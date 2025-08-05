@@ -5,7 +5,7 @@ let currentDay = 0;
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = new Player({});
-
+document.getElementById(player_name).value = player.player_name;
 document.getElementById("strength_number").textContent = player.strength;
 document.getElementById("agility_number").textContent = player.agility;
 document.getElementById("intelligence_number").textContent = player.intelligence;
