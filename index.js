@@ -14,10 +14,12 @@ document.getElementById("observation_number").textContent = player.observation;
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
+    document.getElementById("current_minute").textContent = currentMinute;
 }
 
 function tickHour(){
     currentHour == 23 ? currentHour = 0 : currentHour++;
+    document.getElementById("current_hour").textContent = currentHour;
 }
 
 setInterval(tickMinute, 1000);
