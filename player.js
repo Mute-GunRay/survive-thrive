@@ -2,8 +2,8 @@ class Player {
     constructor({
 	player_name = "Player",
 	title = "nobody",
-	skills = new Skills({}),
-	inventory = new Inventory({}),
+	skills = {},
+	inventory = {},
     }){
 	this.player_name = player_name;
 	this.title = title;
