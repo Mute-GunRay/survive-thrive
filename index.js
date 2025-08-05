@@ -17,9 +17,7 @@ function tickMinute(){
 }
 
 function tickHour(){
-    document.getElementById(`task-${currentHour}`).disabled = false;
     currentHour == 23 ? currentHour = 0 : currentHour++;
-    document.getElementById(`task-${currentHour}`).disabled = true;
 }
 
 setInterval(tickMinute, 1000);
