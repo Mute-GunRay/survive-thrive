@@ -11,159 +11,15 @@
       <!-- Basics Block -->
       <div>
 	<input type="text" id="player_name"/>
-	<div>
-	  <span>Mind: </span><span id="player_mind">000</span>
-	</div>
-	<div>
-	  <span>Body: </span><span id="player_body">000</span>
-	</div>
-	<div>
-	  <span>Spirit: </span><span id="player_spirit">000</span>
-	</div>
       </div>
-      <!-- Resources Block -->
       <div>
-	<span>Health: </span><span id='health'>000</span>
-	<span>Energy: </span><span id='energy'>000</span>
-	<span>Hunger: </span><span id='hunger'>000</span>
-	<span>Thirst: </span><span id='thirst'>000</span>
+	<span id='current-time'>00:00</span>
       </div>
     </header>
     <main>
-      <!-- Task Block -->
-      <select id='days'>
-	<option>monday</option>
-	<option>tuesday</option>
-	<option>wednesday</option>
-	<option>thursday</option>
-	<option>friday</option>
-	<option>saturday</option>
-	<option>sunday</option>
-      </select>
-      <span id='current-time'>00:00</span>
-      <ul>
-	<li>
-	  <span>00:00</span>
-	  <select class='tasks' id='task-0' disabled>
-	  </select>
-	</li>
-	<li>
-	  <span>01:00</span>
-	  <select class='tasks' id='task-1'>
-	  </select>
-	</li>
-	<li>
-	  <span>02:00</span>
-	  <select class='tasks' id='task-2'>
-	  </select>
-	</li>
-	<li>
-	  <span>03:00</span>
-	  <select class='tasks' id='task-3'>
-	  </select>
-	</li>
-	<li>
-	  <span>04:00</span>
-	  <select class='tasks' id='task-4'>
-	  </select>
-	</li>
-	<li>
-	  <span>05:00</span>
-	  <select class='tasks' id='task-5'>
-	  </select>
-	</li>
-	<li>
-	  <span>06:00</span>
-	  <select class='tasks' id='task-6'>
-	  </select>
-	</li>
-	<li>
-	  <span>07:00</span>
-	  <select class='tasks' id='task-7'>
-	  </select>
-	</li>
-	<li>
-	  <span>08:00</span>
-	  <select  class='tasks' id='task-8'>
-	  </select>
-	</li>
-	<li>
-	  <span>09:00</span>
-	  <select class='tasks' id='task-9'>
-	  </select>
-	</li>
-	<li>
-	  <span>10:00</span>
-	  <select class='tasks' id='task-10'>
-	  </select>
-	</li>
-	<li>
-	  <span>11:00</span>
-	  <select class='tasks' id='task-11'>
-	  </select>
-	</li>
-	<li>
-	  <span>12:00</span>
-	  <select class='tasks' id='task-12'>
-	  </select>
-	</li>
-	<li>
-	  <span>13:00</span>
-	  <select class='tasks' id='task-13'>
-	  </select>
-	</li>
-	<li>
-	  <span>14:00</span>
-	  <select class='tasks' id='task-14'>
-	  </select>
-	</li>
-	<li>
-	  <span>15:00</span>
-	  <select class='tasks' id='task-15'>
-	  </select>
-	</li>
-	<li>
-	  <span>16:00</span>
-	  <select class='tasks' id='task-16'>
-	  </select>
-	</li>
-	<li>
-	  <span>17:00</span>
-	  <select class='tasks' id='task-17'>
-	  </select>
-	</li>
-	<li>
-	  <span>18:00</span>
-	  <select class='tasks' id='task-18'>
-	  </select>
-	</li>
-	<li>
-	  <span>19:00</span>
-	  <select class='tasks' id='task-19'>
-	  </select>
-	</li>
-	<li>
-	  <span>20:00</span>
-	  <select class='tasks' id='task-20'></select>
-	</li>
-	<li>
-	  <span>21:00</span>
-	  <select class='tasks' id='task-21'></select>
-	</li>
-	<li>
-	  <span>22:00</span>
-	  <select class='tasks' id='task-22'></select>
-	</li>
-	<li>
-	  <span>23:00</span>
-	  <select class='tasks' id='task-23'></select>
-	</li>
-      </ul>
       <!-- Messages Block -->
-      <article>
-	<nav>
-	  
-	</nav>
+      <article class="block" id="messages">
+	<nav></nav>
       </article>
       <!-- skill block -->
       <div id='skills'>
@@ -177,15 +33,11 @@
       <!-- core stats block -->
       <div>
 	<ul>
-	  <li>
-	    <span>mind</span><span id='mind'>0</span>
-	  </li>
-	  <li>
-	    <span>body</span><span id='body'>0</span>
-	  </li>
-	  <li>
-	    <span>spirit</span><span id='spirit'>0</span>
-	  </li>
+	  <li>Strength: <span>00</span></li>
+	  <li>Agility: <span>00</span></li>
+	  <li>Intelligence: <span>00</span></li>
+	  <li>Constitution: <span>00</span></li>
+	  <li>Observation: <span>00</span></li>
 	</ul>
       </div>
     </main>

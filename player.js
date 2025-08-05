@@ -2,25 +2,22 @@ class Player {
     constructor({
 	player_name = "Player",
 	title = "nobody",
-	mind = [1, 0, 100, 1.1],
-	body = [1, 0, 100, 1.1],
-	spirit = [1, 0, 100, 1.1],
-	activities = {},
-	schedule = {},
+	skills = new Skills({}),
+	inventory = new Inventory({}),
     }){
 	this.player_name = player_name;
 	this.title = title;
-	this.mind = mind;
-	this.body = body;
-	this.spirit = spirit;
 	this.skills = skills;
 	this.inventory = [];
-	this.activities = activities;
-	this.schedule = schedule;
-	this.health = [(body[0]*100), (body[0]*100)];
-	this.energy = [((body[0]+spirit[0])*100), ((body[0]+spirit[0])*100)]
-	this.hunger = [0, 100];
-	this.thirst = [0, 100];
+	this.health_max = 100;
+	this.health_current = 100;
+	this.energy_max = 100;
+	this.energy_current = 100;
+	this.strength = 1;
+	this.agility = 1;
+	this.intelligence = 1;
+	this.constitution = 1;
+	this.observation = 1;
     }
 
     resource_update(resource_delta = 0, resource = null){
@@ -32,10 +29,6 @@ class Player {
 	switch(resource){
 	case "energy":
 	    this.energy[0] = (this.energy[0]+resource_delta).toFixed(2);
-	case "hunger":
-	    this.hunger[0] = (this.hunger[0]+resource_delta).toFixed(2);
-	case "thirst":
-	    this.thirst[0] = (this.thirst[0]+resource_delta).toFixed(2);
 	default:
 	    this.health[0] = (this.health[0]+resource_delta).toFixed(2);
 	}	

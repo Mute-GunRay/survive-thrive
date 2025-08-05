@@ -6,19 +6,14 @@ let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = new Player({});
 
-document.getElementById("player_name").value = player.player_name
-document.getElementById("player_mind").textContent = player.mind[0]
-document.getElementById("player_body").textContent = player.body[0]
-document.getElementById("player_spirit").textContent = player.spirit[0]
-document.getElementById("health").textContent = player.health[0]
-document.getElementById("energy").textContent = player.energy[0]
-document.getElementById("hunger").textContent = player.hunger[0]
-document.getElementById("thirst").textContent = player.thirst[0]
+document.getElementById("strength_number").textContent = player.strength;
+document.getElementById("agility_number").textContent = player.agility;
+document.getElementById("intelligence_number").textContent = player.intelligence;
+document.getElementById("constitution_number").textContent = player.constitution;
+document.getElementById("observation_number").textContent = player.observation;
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
-    player.energy[0] = player.energy[0] - 1;
-    console.log(player.energy)
 }
 
 function tickHour(){
