@@ -14,7 +14,11 @@ document.getElementById("observation_number").textContent = player.observation;
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
-    document.getElementById("current_minute").textContent = currentMinute;
+    if(currentMinute < 10){
+	document.getElementById("current_minute").textContent = "0" + currentMinute;
+    } else {
+	document.getElementById("current_minute").textContent = currentMinute;
+    }
 }
 
 function tickHour(){
