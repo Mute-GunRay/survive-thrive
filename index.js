@@ -13,10 +13,12 @@ document.getElementById("constitution_number").textContent = player.constitution
 document.getElementById("observation_number").textContent = player.observation;
 
 function renderSkills(){
-    let skill_keys = Object.keys(skills)
+    let skill_keys = Object.keys(skills);
+    let skills_block = document.getElementById('skills');
     skill_keys.forEach(skill_key => {
 	let skill_shard = document.createElement('span');
 	skill_shard.textContent = skills[skill_key]["name"]
+	skills_block.appendChild(skill_shard);
     })
 }
 
