@@ -42,16 +42,22 @@ function renderSkills(){
 	switch(skill['catagory']){
 	case "physical":
 	    physical_skills_list.appendChild(skill_shard);
+	    break;
 	case "social":
 	    social_skills_list.appendChild(skill_shard);
+	    break;
 	case "tech":
-	    tech_skills_list.appendChild(skill_shard)
+	    tech_skills_list.appendChild(skill_shard);
+	    break;
 	case "combat":
-	    combat_skills_list.appendChild(skill_shard)
+	    combat_skills_list.appendChild(skill_shard);
+	    break;
 	case "knowledge":
-	    knowledge_skills_list.appendChild(skill_shard)
+	    knowledge_skills_list.appendChild(skill_shard);
+	    break;
 	default:
-	    magic_skills_list.appendChild(skill_shard)
+	    magic_skills_list.appendChild(skill_shard);
+	    break;
 	}
     })
 
