@@ -12,6 +12,14 @@ document.getElementById("intelligence_number").textContent = player.intelligence
 document.getElementById("constitution_number").textContent = player.constitution;
 document.getElementById("observation_number").textContent = player.observation;
 
+function renderSkills(){
+    let skill_keys = Object.keys(skills)
+    skill_keys.forEach(skill_key => {
+	let skill_shard = document.createElement('span');
+	skill_shard.textContent = skills[skill_key]["name"]
+    })
+}
+
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
     if(currentMinute < 10){
@@ -25,6 +33,8 @@ function tickHour(){
     currentHour == 23 ? currentHour = 0 : currentHour++;
     document.getElementById("current_hour").textContent = currentHour;
 }
+
+renderSkills()
 
 setInterval(tickMinute, 1000);
 setInterval(tickHour, 60000);

@@ -55,111 +55,111 @@ class Skill {
 skills["charm"] = new Skill({
     name: 'Charm',
     description: "Make people like you",
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit',
 })
 skills["intimidate"] = new Skill({
     name: "Intimidate",
     description: "Make people afraid of you",
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit',
 })
 skills["calm"] = new Skill({
     name: "Calm",
     description: "deescalate a situation",
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit'
 })
 skills["haggle"] = new Skill({
     name: 'Haggle',
     description: 'bargin hunting',
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit'
 })
 skills["communicate"] = new Skill({
     name: 'Communicate',
     description: 'effectively talk to others',
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit'
 })
 skills['lead'] = new Skill({
     name: "Leadership",
     description: "Make people follow you",
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit',
 })
 skills["empathy"] = new Skill({
     name: "Empathy",
     description: "connect with people emotionally",
-    catagory: "Social",
+    catagory: "social",
     primary_stat: 'spirit'
 })
 skills["Listen"] = new Skill({
     name: 'Listen',
     description: "actively pay attention to others",
-    catagory: 'Social',
+    catagory: 'social',
     primary_stat: 'spirit'
 })
 // these are tech skills
 skills["coding"] = new Skill({
     name: 'Programming',
     description: "Write computer programs",
-    catagory: 'Tech',
+    catagory: 'tech',
     primary_stat: 'mind'
 })
 skills["networks"] = new Skill({
     name: "Network Architecture",
     description: "Understand and manipulate digital networks",
-    catagory: 'Tech',
+    catagory: 'tech',
     primary_stat: "mind"
 })
 skills["data mining"] = new Skill({
     name: 'Data mining',
     description: "extract data from digital sources",
-    catagory: 'Tech',
+    catagory: 'tech',
     primary_stat: "mind"
 })
 skills["ciruitry"] = new Skill({
     name: 'Circuitry',
     description: 'Design, build, and fix electronics',
-    catagory: 'Tech',
+    catagory: 'tech',
     primary_stat: 'mind'
 })
 // these are weapon skills
 skills["unarmed"] = new Skill({
     name: "Unarmed",
     description: "Fighting with your body",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["small guns"] = new Skill({
     name: "Small Caliber",
     description: "handle small guns",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["medium guns"] = new Skill({
     name: "Medium Caliber",
     description: "handle medium guns",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["large guns"] = new Skill({
     name: "Large Caliber",
     description: "handle large guns",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["small blades"] = new Skill({
     name: "Small Blades",
     description: "handle small single handed blades",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["medium blades"] = new Skill({
     name: "Medium Blades",
     description: "handle large single handed blades",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["large blades"] = new Skill({
@@ -171,167 +171,166 @@ skills["large blades"] = new Skill({
 skills["small shields"] = new Skill({
     name: "Small Shields",
     description: "handle small shields",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["medium shields"] = new Skill({
     name: "Medium Shields",
     description: "Handle medium shields",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["large shields"] = new Skill({
     name: "Large Shields",
     description: "handle large shields",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["small bows"] = new Skill({
     name: "Light Bows",
     description: "handle small bows and crossbows",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 skills["heavy bows"] = new Skill({
     name: "heavy bows",
     description: "handle heavy bows and crossbows",
-    catagory: 'Combat',
+    catagory: 'combat',
     primary_stat: 'body'
 })
 // these are general knowledge skills
 skills["reading"] = new Skill({
     name: "Reading",
     description: "how proficent you are at reading",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["writing"] = new Skill({
     name: "Writing",
     description: "how proficent you are at writing",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["comprehension"] = new Skill({
     name: "Comprehension",
     description: "how proficent you are at understanding",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["recall"] = new Skill({
     name: "Recall",
     description: "how proficent you are at remembering details",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["memory"] = new Skill({
     name: "Memory",
     description: "how proficent you are at retaining information",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["observe"] = new Skill({
     name: "Observation",
     description: "how proficent you are at analyzing your surrounding",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["logic"] = new Skill({
     name: "Reasoning",
     description: "how proficent you are at thinking through something logically",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["research"] = new Skill({
     name: "Researching",
     description: "how proficent you are at finding information",
-    catagory: 'Knowledge',
+    catagory: 'knowledge',
     primary_stat: 'Mind'
 })
 skills["casting"] = new Skill({
     name: "Spell Casting",
     description: "how proficent you are at casting spells",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 // these are magic skills
 skills["chemistry"] = new Skill({
     name: "Chemistry",
     description: "how proficent you are at understanding, handling, and using chemicals",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 skills["theory"] = new Skill({
     name: 'Magic Theory',
     description: "how proficent you are at understanding magic",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'Mind'
 })
 skills["spell crafting"] = new Skill({
     name: "Spell Crafting",
     description: "how proficent you are at developing or learning spells",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 skills["elemental"] = new Skill({
     name: "Elemental Magic",
     description: "how proficent you are at utilizing maigic based on the base elements",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 skills["psychic"] = new Skill({
     name: "Psychic Magic",
     description: "how proficent you are at utilizing magic of the mind",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 skills["mana"] = new Skill({
     name: "Spirit Control",
     description: "how proficent you are at regulating the energy needed to cast spells",
-    catagory: 'Magic',
+    catagory: 'magic',
     primary_stat: 'spirit'
 })
 // these are physical skills
 skills["lifting"] = new Skill({
     name: "Weight Lifting",
     description: "how proficent you are at lifting heavy objects",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["running"] = new Skill({
     name: "Running",
     description: "how proficent you are at running long distances",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["flexibility"] = new Skill({
     name: "Flexibility",
     description: "how proficent you are at stretching and twisting your body",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["balance"] = new Skill({
     name: "Balance",
     description: "how hard is it to knock you off your feet",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["coordination"] = new Skill({
     name: "Coordination",
     description: "how proficent you are at moving in sync",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["endurence"] = new Skill({
     name: "Endurence",
     description: "how proficent you are at conserving your energy",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 skills["evasion"] = new Skill({
     name: "Evasion",
     description: "how proficent you are at avoiding getting hit",
-    catagory: 'Physical',
+    catagory: 'physical',
     primary_stat: 'body'
 })
 
-console.log(skills);
