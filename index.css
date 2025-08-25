@@ -13,5 +13,5 @@
 body {
     background-color: var(--black);
     color: var(--grey);
-    font-family: ;
+    font-family: "Nova Mono", monospace;
 }
