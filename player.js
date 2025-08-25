@@ -15,9 +15,10 @@ class Player {
 	this.energy_current = 100;
 	this.strength = 1;
 	this.agility = 1;
+	this.dexterity = 1;
 	this.intelligence = 1;
 	this.constitution = 1;
-	this.observation = 1;
+	this.perception = 1;
     }
 
     resource_update(resource_delta = 0, resource = null){

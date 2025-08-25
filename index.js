@@ -2,6 +2,7 @@ let currentMinute = 0;
 let currentHour = 0;
 let currentDay = 0;
 
+// begin renderer extraction
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = new Player({});
@@ -68,6 +69,7 @@ function renderSkills(){
     magic_skills_block.appendChild(magic_skills_list)
     physical_skills_block.appendChild(physical_skills_list)
 }
+// end renderer extraction
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
@@ -83,7 +85,7 @@ function tickHour(){
     document.getElementById("current_hour").textContent = currentHour;
 }
 
-renderSkills()
+renderSkills();
 
 setInterval(tickMinute, 1000);
 setInterval(tickHour, 60000);
