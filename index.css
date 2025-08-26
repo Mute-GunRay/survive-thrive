@@ -35,4 +35,10 @@ header {
     border-style: solid;
 }
 
+.stat_block {
+    display: flex-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 

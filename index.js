@@ -9,9 +9,9 @@ let player = new Player({});
 document.getElementById("player_title").textContent = player.title;
 document.getElementById("strength_number").textContent = player.strength;
 document.getElementById("agility_number").textContent = player.agility;
-document.getElementById("intelligence_number").textContent = player.intelligence;
-document.getElementById("constitution_number").textContent = player.constitution;
-document.getElementById("observation_number").textContent = player.observation;
+document.getElementById("int_number").textContent = player.intelligence;
+document.getElementById("con_number").textContent = player.constitution;
+document.getElementById("obs_number").textContent = player.observation;
 
 function renderSkills(){
     let skill_keys = Object.keys(skills);
