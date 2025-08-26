@@ -38,6 +38,10 @@ header {
     align-items: center;
 }
 
+#container {
+    margin: 3px;
+}
+
 .stat_block {
     display: flex-box;
     flex-direction: row;
