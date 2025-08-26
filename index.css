@@ -32,6 +32,7 @@ header {
     border-right-width: var(--x-small);
     border-color: var(--purple);
     border-radius: var(--xx-small);
+    border-style: solid;
 }
 
 
