@@ -8,6 +8,14 @@
     --grey: #c0caf5;
     --purple: #9d7cd8;
     --pink: #ff007c;
+
+    --xx-small: 1px;
+    --x-small: 3px;
+    --small: 5px;
+    --medium: 7px;
+    --large: 9px;
+    --x-large: 11px;
+    --xx-large: 14px;
 }
 
 body {
@@ -15,3 +23,15 @@ body {
     color: var(--grey);
     font-family: "Nova Mono", monospace;
 }
+
+header {
+    display: flex;
+    flex-direction: column;
+    border-bottom-width: var(--medium);
+    border-left-width: var(--x-small);
+    border-right-width: var(--x-small);
+    border-color: var(--purple);
+    border-radius: var(--xx-small);
+}
+
+
