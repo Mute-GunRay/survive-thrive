@@ -22,6 +22,7 @@ body {
     background-color: var(--black);
     color: var(--grey);
     font-family: "Nova Mono", monospace;
+    font-size: var(--small);
 }
 
 header {
@@ -50,16 +51,12 @@ header {
 }
 
 #skills {
-    border-top-width: var(--x-small);
-    border-bottom-width: var(--x-small);
-    border-left-width: var(--xx-small);
-    border-right-width: var(--xx-small);
+    border-top-width: var(--xx-small);
+    border-bottom-width: var(--xx-small);
     border-color: var(--purple);
     border-radius: var(--small);
     border-top-style: solid;
     border-bottom-style: solid;
-    border-left-style: solid;
-    border-right-style: solid;
     align-items: center;
 }
 
