@@ -27,7 +27,7 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-bottom-width: var(--x-small);
     border-left-width: var(--xx-small);
     border-right-width: var(--xx-small);
@@ -47,7 +47,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 85%;
 }
 
 #skills {
