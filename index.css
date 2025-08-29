@@ -28,6 +28,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     border-bottom-width: var(--x-small);
     border-left-width: var(--xx-small);
     border-right-width: var(--xx-small);
