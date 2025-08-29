@@ -4,6 +4,7 @@ let currentDay = 0;
 
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
+/*
 let player = new Player({});
 document.getElementById("player_title").textContent = player.title;
 document.getElementById("strength_number").textContent = player.strength;
@@ -12,7 +13,6 @@ document.getElementById("int_number").textContent = player.intelligence;
 document.getElementById("con_number").textContent = player.constitution;
 document.getElementById("obs_number").textContent = player.observation;
 
-/* 
 function renderSkills(){
     let skill_keys = Object.keys(skills);
     let social_skills_block = document.getElementById("social")

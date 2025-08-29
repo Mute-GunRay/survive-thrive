@@ -28,7 +28,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-bottom-width: var(--x-small);
     border-left-width: var(--xx-small);
     border-right-width: var(--xx-small);
@@ -37,7 +37,6 @@ header {
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
-    align-items: center;
 }
 
 .container {
@@ -60,4 +59,9 @@ header {
     align-items: center;
 }
 
+#player {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
