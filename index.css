@@ -22,7 +22,7 @@ body {
     background-color: var(--black);
     color: var(--grey);
     font-family: "Nova Mono", monospace;
-    font-size: var(--medium);
+    font-size: var(--x-large);
 }
 
 header {
