@@ -2,7 +2,6 @@ let currentMinute = 0;
 let currentHour = 0;
 let currentDay = 0;
 
-// begin renderer extraction
 let taskSelects = Array.from(document.getElementsByClassName('tasks'));
 
 let player = new Player({});
@@ -13,6 +12,7 @@ document.getElementById("int_number").textContent = player.intelligence;
 document.getElementById("con_number").textContent = player.constitution;
 document.getElementById("obs_number").textContent = player.observation;
 
+/* 
 function renderSkills(){
     let skill_keys = Object.keys(skills);
     let social_skills_block = document.getElementById("social")
@@ -69,7 +69,7 @@ function renderSkills(){
     magic_skills_block.appendChild(magic_skills_list)
     physical_skills_block.appendChild(physical_skills_list)
 }
-// end renderer extraction
+*/
 
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
