@@ -12,81 +12,228 @@
   </head>
   <body>
     <header>
+      <div id="player">
 	<div>
-	  <span id='current_time'>
-	    <span id="current_hour">00</span>
-	    <span>:</span>
-	    <span id="current_minute">00</span>
-	  </span>
+	  <span>Player</span>
 	</div>
-	<div id="player">
-	  <div>
-	    <span id="player_title">Nobody</span>
-	    <span> | </span>
-	  </div>
-	  <div id="stat-block">
-	    <div>
-	      <span>Strength: </span>
-	      <span id="strength_number">00</span>
-	    </div>
-	    <div class="container">
-	      <span>Agility: </span>
-	      <span id="agility_number">00</span>
-	    </div>
-	    <div class="container">
-	      <span>Intelligence: </span>
-	      <span id="int_number">00</span>
-	    </div>
-	    <div class="container">
-	      <span>Constitution: </span>
-	      <span id="con_number">00</span>
-	    </div>
-	    <div class="container">
-	      <span>Observation: </span>
-	      <span id="obs_number">00</span>
-	    </div>
-	  </div>
+	<div>
+	  <span>Nobody</span>
+	  <span> | </span>
+	  <span>000</span>
 	</div>
-    </header>
-    <main>
-      <!-- skill block -->
-      <div class="container" id='skills'>
-	<div id="social">
-	  <span>Social</span>
-	  <hr />
-	</div>
-	<div id="tech">
-	  <span>Tech</span>
-	  <hr />
-	</div>
-	<div id="combat">
-	  <span>Combat</span>
-	  <hr />
-	</div>
-	<div id="knowledge">
-	  <span>Knowledge</span>
-	  <hr />
-	</div>
-	<div id="magic">
-	  <span>Magic</span>
-	  <hr />
-	</div>
-	<div id="physical">
-	  <span>Physical</span>
+	<div>
+	  <span>Location</span>
 	</div>
       </div>
-      <!-- Messages Block -->
-      <article class="container" id="messages">
-	<nav></nav>
-      </article>
+      <div id="status_bar">
+	<div>
+	  <span>HP: </span>
+	  <progress id="health_bar" max="100" value="68">68</progress>
+	</div>
+	<div>
+	  <span>SP: </span>
+	  <progress id="stamina_bar" max="100" value="35">35</progress>
+	</div>
+	<div>
+	  <span>MP: </span>
+	  <progress id="mana_bar" max="100" value="87">87</progress>
+	</div>
+      </div>
+    </header>
+    <main>
+      <section>
+	<nav>
+	  <div>
+	    <div>
+	      <span>Schedule</span>
+	    </div>
+	    <div>
+	      <span>Messages</span>
+	    </div>
+	  </div>
+	</nav>
+	<article>
+	  <select name="day" id="day_select">
+	    <option value="monday">Monday</option>
+	    <option value="tuesday">Tuesday</option>
+	    <option value="wednesday">Wednesday</option>
+	    <option value="thursday">Thursday</option>
+	    <option value="friday">Friday</option>
+	    <option value="saturday">Saturday</option>
+	    <option value="sunday">Sunday</option>
+	  </select>
+	  <ol>
+	    <li>
+	      <select name="hour_1"></select>
+	    </li>
+	    <li>
+	      <select name="hour_2"></select>
+	    </li>
+	    <li>
+	      <select name="hour_3"></select>
+	    </li>
+	    <li>
+	      <select name="hour_4"></select>
+	    </li>
+	    <li>
+	      <select name="hour_5"></select>
+	    </li>
+	    <li>
+	      <select name="hour_6"></select>
+	    </li>
+	    <li>
+	      <select name="hour_7"></select>
+	    </li>
+	    <li>
+	      <select name="hour_8"></select>
+	    </li>
+	    <li>
+	      <select name="hour_9"></select>
+	    </li>
+	    <li>
+	      <select name="hour_10"></select>
+	    </li>
+	    <li>
+	      <select name="hour_11"></select>
+	    </li>
+	    <li>
+	      <select name="hour_12"></select>
+	    </li>
+	    <li>
+	      <select name="hour_13"></select>
+	    </li>
+	    <li>
+	      <select name="hour_14"></select>
+	    </li>
+	    <li>
+	      <select name="hour_15"></select>
+	    </li>
+	    <li>
+	      <select name="hour_16"></select>
+	    </li>
+	    <li>
+	      <select name="hour_17"></select>
+	    </li>
+	    <li>
+	      <select name="hour_18"></select>
+	    </li>
+	    <li>
+	      <select name="hour_19"></select>
+	    </li>
+	    <li>
+	      <select name="hour_20"></select>
+	    </li>
+	    <li>
+	      <select name="hour_21"></select>
+	    </li>
+	    <li>
+	      <select name="hour_22"></select>
+	    </li>
+	    <li>
+	      <select name="hour_23"></select>
+	    </li>
+	    <li>
+	      <select name="hour_24"></select>
+	    </li>
+	  </ol>
+	</article>
+	<article>
+	  <div>
+	    <p>This is a filler message</p>
+	  </div>
+	</article>
+      </section>
+      <section>
+	<nav>
+	  <div>
+	    <span>Map</span>
+	  </div>
+	  <div>
+	    <span>Character</span>
+	  </div>
+	  <div>
+	    <span>Inventory</span>
+	  </div>
+	  <div>
+	    <span>Crafting</span>
+	  </div>
+	  <div>
+	    <span>Gigs</span>
+	  </div>
+	</nav>
+	<article>
+	  <nav>
+	    <div>
+	      <span>Local</span>
+	    </div>
+	    <div>
+	      <span>Region</span>
+	    </div>
+	    <div>
+	      <span>Global</span>
+	    </div>
+	  </nav>
+	  <div>
+	    This is where the local map goes
+	  </div>
+	  <div>
+	    This is where the region map goes
+	  </div>
+	  <div>
+	    This is where the global map goes
+	  </div>
+	</article>
+	<article>
+	 <nav>
+	  <div>
+	    <span>Overview</span>
+	  </div>
+	  <div>
+	    <span>Attributes</span>
+	  </div>
+	  <div>
+	    <span>Status</span>
+	  </div>
+	 </nav>
+	 <div>
+	   <div>
+	     <span>Name: </span>
+	     <span>Player</span>
+	     <input type="text" value="Player" />
+	   </div>
+	   <div>
+	     <span>Title: </span>
+	     <span>Nobody</span>
+	     <select name="available_titles" value="Nobody"></select>
+	   </div>
+	   <div>
+	     <div>
+	       <span>Level: </span>
+	       <span>000</span>
+	     </div>
+	     <div>
+	       <span>EXP: </span>
+	       <span>000/1000</span>
+	     </div>
+	   </div>
+	 </div>
+	 <div>
+	   <div>
+	     <span>Strength: </span>
+	     <span>000</span>
+	   </div>
+	   <div>
+	     <span>Agility: </span>
+	     <span>000</span>
+	   </div>
+	   <div>
+	     <span>Dexterity: </span>
+	     <span>000</span>
+	     </div>
+	 </div>
+	</article>
+      </section>
     </main>
-    <footer>
-      <nav>
-	<a>Created by MuteGunRay(Tate Ray)</a>
-	<a>Learn More about this game</a>
-	<a>Other projects of mine</a>
-      </nav>
-    </footer>
   </body>
   <script src="helpers.js"></script>
   <script src="player.js"></script>
