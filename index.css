@@ -48,3 +48,8 @@ header {
 .inactive {
     display: none;
 }
+
+.horizontal_nav {
+    display: flex;
+    flex-direction: row;
+}
