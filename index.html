@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <div id="player">
+      <div id="player_block">
 	<div>
 	  <span>Player</span>
 	</div>
@@ -42,8 +42,8 @@
     </header>
     <main>
       <!-- Begin Sidebar -->
-      <section>
-	<nav>
+      <section id="side_bar">
+	<nav class="horizontal_nav">
 	  <div>
 	    <div>
 	      <span>Schedule</span>
@@ -53,95 +53,8 @@
 	    </div>
 	  </div>
 	</nav>
-	<!-- Begin Schedule block-->
-	<article>
-	  <select name="day" id="day_select">
-	    <option value="monday">Monday</option>
-	    <option value="tuesday">Tuesday</option>
-	    <option value="wednesday">Wednesday</option>
-	    <option value="thursday">Thursday</option>
-	    <option value="friday">Friday</option>
-	    <option value="saturday">Saturday</option>
-	    <option value="sunday">Sunday</option>
-	  </select>
-	  <ol>
-	    <li>
-	      <select name="hour_1"></select>
-	    </li>
-	    <li>
-	      <select name="hour_2"></select>
-	    </li>
-	    <li>
-	      <select name="hour_3"></select>
-	    </li>
-	    <li>
-	      <select name="hour_4"></select>
-	    </li>
-	    <li>
-	      <select name="hour_5"></select>
-	    </li>
-	    <li>
-	      <select name="hour_6"></select>
-	    </li>
-	    <li>
-	      <select name="hour_7"></select>
-	    </li>
-	    <li>
-	      <select name="hour_8"></select>
-	    </li>
-	    <li>
-	      <select name="hour_9"></select>
-	    </li>
-	    <li>
-	      <select name="hour_10"></select>
-	    </li>
-	    <li>
-	      <select name="hour_11"></select>
-	    </li>
-	    <li>
-	      <select name="hour_12"></select>
-	    </li>
-	    <li>
-	      <select name="hour_13"></select>
-	    </li>
-	    <li>
-	      <select name="hour_14"></select>
-	    </li>
-	    <li>
-	      <select name="hour_15"></select>
-	    </li>
-	    <li>
-	      <select name="hour_16"></select>
-	    </li>
-	    <li>
-	      <select name="hour_17"></select>
-	    </li>
-	    <li>
-	      <select name="hour_18"></select>
-	    </li>
-	    <li>
-	      <select name="hour_19"></select>
-	    </li>
-	    <li>
-	      <select name="hour_20"></select>
-	    </li>
-	    <li>
-	      <select name="hour_21"></select>
-	    </li>
-	    <li>
-	      <select name="hour_22"></select>
-	    </li>
-	    <li>
-	      <select name="hour_23"></select>
-	    </li>
-	    <li>
-	      <select name="hour_24"></select>
-	    </li>
-	  </ol>
-	</article>
-	<!-- End Schedule -->
 	<!-- Begin Messages Block -->
-	<article>
+	<article id="message_block">
 	  <div>
 	    <p>This is a filler message</p>
 	  </div>
@@ -149,60 +62,60 @@
 	<!-- End Messages Block -->
       </section>
       <!-- Begin Main Block -->
-      <section>
-	<nav>
+      <section id="main_block">
+	<nav class="horizontal_nav">
 	  <div>
-	    <span>Map</span>
+	    <span class="active" id="map_button">Map</span>
 	  </div>
 	  <div>
-	    <span>Character</span>
+	    <span id="character_button">Character</span>
 	  </div>
 	  <div>
-	    <span>Inventory</span>
+	    <span id="inventory_button">Inventory</span>
 	  </div>
 	  <div>
-	    <span>Crafting</span>
+	    <span id="crafting_button">Crafting</span>
 	  </div>
 	  <div>
-	    <span>Gigs</span>
+	    <span id="gigs_button">Gigs</span>
 	  </div>
 	</nav>
 	<!-- Begin Map Sub-block -->
-	<article>
-	  <nav>
+	<article class="active" id="map_block">
+	  <nav class="vertical_nav">
 	    <div>
-	      <span>Local</span>
+	      <span id="local_map_button">Local</span>
 	    </div>
 	    <div>
-	      <span>Region</span>
+	      <span id="region_map_button">Region</span>
 	    </div>
 	    <div>
-	      <span>Global</span>
+	      <span id="global_map_button">Global</span>
 	    </div>
 	  </nav>
 	  <!-- Begin Map Display Blocks -->
-	  <div>
+	  <div class="map" id="local_map">
 	    This is where the local map goes
 	  </div>
-	  <div>
+	  <div class="map" id="region_map">
 	    This is where the region map goes
 	  </div>
-	  <div>
+	  <div class="map" id="global_map">
 	    This is where the global map goes
 	  </div>
 	  <!-- End Map Display Blocks -->
 	</article>
 	<!-- Begin Player Sub-block -->
-	<article>
-	 <nav>
+	<article class="inactive" id="character_block">
+	 <nav class="vertical_nav">
 	  <div>
-	    <span>Overview</span>
+	    <span id="overview_button">Overview</span>
 	  </div>
 	  <div>
-	    <span>Attributes</span>
+	    <span id="attributes_button">Attributes</span>
 	  </div>
 	  <div>
-	    <span>Skills</span>
+	    <span id="skills_button">Skills</span>
 	  </div>
 	 </nav>
 	 <!-- Begin Overview Sub-Block -->

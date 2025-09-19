@@ -41,29 +41,10 @@ header {
     padding: 2px;
 }
 
-.container {
-    margin: 3px;
+#active {
+    
 }
 
-#stat-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+#inactive {
+    display: none;
 }
-
-#skills {
-    border-top-width: var(--xx-small);
-    border-bottom-width: var(--xx-small);
-    border-color: var(--purple);
-    border-radius: var(--small);
-    border-top-style: solid;
-    border-bottom-style: solid;
-    align-items: center;
-}
-
-#player {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
