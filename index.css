@@ -45,6 +45,6 @@ header {
     
 }
 
-#inactive {
+.inactive {
     display: none;
 }
