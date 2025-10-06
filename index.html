@@ -1,295 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Project Thrive</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div id="player_block">
-	<div>
-	  <span>Player</span>
-	</div>
-	<div>
-	  <span>Nobody</span>
-	  <span> | </span>
-	  <span>000</span>
-	</div>
-	<div>
-	  <span>Location</span>
-	</div>
+        <div>
+          <span>Player</span>
+        </div>
+        <div>
+          <span>Nobody</span>
+          <span> | </span>
+          <span>000</span>
+        </div>
+        <div>
+          <span>Location</span>
+        </div>
       </div>
       <div id="status_bar">
-	<div>
-	  <span>HP: </span>
-	  <progress id="health_bar" max="100" value="68">68</progress>
-	</div>
-	<div>
-	  <span>SP: </span>
-	  <progress id="stamina_bar" max="100" value="35">35</progress>
-	</div>
-	<div>
-	  <span>MP: </span>
-	  <progress id="mana_bar" max="100" value="87">87</progress>
-	</div>
+        <div>
+          <span>HP: </span>
+          <progress id="health_bar" max="100" value="68">68</progress>
+        </div>
+        <div>
+          <span>SP: </span>
+          <progress id="stamina_bar" max="100" value="35">35</progress>
+        </div>
+        <div>
+          <span>MP: </span>
+          <progress id="mana_bar" max="100" value="87">87</progress>
+        </div>
       </div>
     </header>
     <main>
-      <!-- Begin Sidebar -->
       <section id="side_bar">
-	<nav class="horizontal_nav">
-	  <div>
-	    <div>
-	      <span>Schedule</span>
-	    </div>
-	    <div>
-	      <span>Messages</span>
-	    </div>
-	  </div>
-	</nav>
-	<!-- Begin Messages Block -->
-	<article id="message_block">
-	  <div>
-	    <p>This is a filler message</p>
-	  </div>
-	</article>
-	<!-- End Messages Block -->
+        <nav class="horizontal_nav">
+            <div>
+              <span>Messages</span>
+            </div>
+        </nav>
+        <article class="show" id="message_block">
+          <div>
+            <p>This is a filler message</p>
+          </div>
+        </article>
       </section>
-      <!-- Begin Main Block -->
       <section id="main_block">
-	<nav class="horizontal_nav">
-	  <div>
-	    <span class="active" id="map_button">Map</span>
+        <nav class="horizontal_nav">
+          <div>
+            <span class="active" id="character_button">
+	      Character
+	    </span>
+          </div>
+          <div>
+            <span id="inventory_button">
+	      Inventory
+	    </span>
+          </div>
+          <div>
+            <span id="crafting_button">
+	      Crafting
+	    </span>
+          </div>
+          <div>
+            <span id="gigs_button">
+	      Gigs
+	    </span>
+          </div>
+        </nav>
+        <article class="show" id="character_block">
+	  <div id="overview_wrapper">
+            <div id="title_block">
+              <span>Title: </span>
+              <span id="title_text">Nobody</span>
+            </div>
+            <div id="level_block">
+              <div>
+                <span>Level: </span>
+                <span id="level_text">000</span>
+              </div>
+              <div>
+		<span>EXP: </span>
+		<span id="exp_current_text">000</span>
+		<span> / </span>
+		<span id="exp_needed_text">1000</span>
+              </div>
+            </div>
+	    <div id="points_block">
+	      <div>
+		<span>HP: </span>
+		<span id="hp_current_text">000</span>
+		<span> / </span>
+		<span id="hp_max_text">100</span>
+	      </div>
+	      <div>
+		<span>SP: </span>
+		<span id="sp_current_text">000</span>
+		<span> / </span>
+		<span id="sp_max_text">100</span>
+	      </div>
+	      <div>
+		<span>MP: </span>
+		<span id="mp_current_text">000</span>
+		<span> / </span>
+		<span id="mp_max_text">100</span>
+	      </div>
+	    </div>
 	  </div>
-	  <div>
-	    <span id="character_button">Character</span>
-	  </div>
-	  <div>
-	    <span id="inventory_button">Inventory</span>
-	  </div>
-	  <div>
-	    <span id="crafting_button">Crafting</span>
-	  </div>
-	  <div>
-	    <span id="gigs_button">Gigs</span>
-	  </div>
-	</nav>
-	<!-- Begin Map Sub-block -->
-	<article id="map_block">
-	  <nav class="vertical_nav">
+          <div id="stat_wrapper">
+            <div>
+	      <span>Strength: </span>
+	      <span id="str_text">000</span>
+            </div>
+            <div>
+	      <span>Agility: </span>
+	      <span id="agi_text">000</span>
+            </div>
+            <div>
+	      <span>Dexterity: </span>
+	      <span id="dex_text">000</span>
+            </div>
 	    <div>
-	      <span class="active"
-		    id="local_map_button">Local</span>
+	      <span>Intelligence: </span>
+	      <span id="int_text">000</span>
 	    </div>
 	    <div>
-	      <span id="region_map_button">Region</span>
+	      <span>Constitution: </span>
+	      <span id="con_text">000</span>
 	    </div>
 	    <div>
-	      <span id="global_map_button">Global</span>
+	      <span>perception: </span>
+	      <span id="per_text">000</span>
 	    </div>
-	  </nav>
-	  <!-- Begin Map Display Blocks -->
-	  <div class="map" id="local_map">
-	    This is where the local map goes
+          </div>
+	  <div id="attributes_wrapper">
+	    <div id="physical_block">
+              <div>
+		<span>Physical Attack: </span>
+		<span>000 </span>
+		<span>(000)</span>
+              </div>
+              <div>
+		<span>Physical Defense: </span>
+		<span>000 </span>
+		<span>(000)</span>
+              </div>
+              <div>
+		<span>Physical Block chance: </span>
+		<span>000 </span>
+		<span>(000)</span>
+              </div>
+	    </div>
+	    <div id="magic_block">
+              <div>
+		<span>Magic Attack: </span>
+		<span>000 </span>
+		<span>(000)</span>
+              </div>
+              <div>
+		<span>Magic Defense: </span>
+		<span>000</span>
+		<span>(000)</span>
+              </div>
+              <div>
+		<span>Block Chance: </span>
+		<span>000</span>
+		<span>(000)</span>
+              </div>
+	    </div>
+	    <div>
+              <div>
+		<span>Dodge: </span>
+		<span>000 </span>
+		<span>(000)</span>
+              </div>
+              <div>
+		<span>Sneak: </span>
+		<span>000</span>
+		<span>(000)</span>
+		<div>
+		  <span>Manuver: </span>
+		  <span>000</span>
+		  <span>(000)</span>
+		</div>
+	      </div>
+	    </div>
 	  </div>
-	  <div class="map inactive" id="region_map">
-	    This is where the region map goes
-	  </div>
-	  <div class="map inactive" id="global_map">
-	    This is where the global map goes
-	  </div>
-	  <!-- End Map Display Blocks -->
-	</article>
-	<!-- Begin Player Sub-block -->
-	<article class="inactive" id="character_block">
-	 <nav class="vertical_nav">
-	  <div>
-	    <span id="overview_button">Overview</span>
-	  </div>
-	  <div>
-	    <span id="attributes_button">Attributes</span>
-	  </div>
-	  <div>
-	    <span id="skills_button">Skills</span>
-	  </div>
-	 </nav>
-	 <!-- Begin Overview Sub-Block -->
-	 <div>
-	   <div>
-	     <span>Name: </span>
-	     <span>Player</span>
-	     <input type="text" value="Player" />
-	   </div>
-	   <div>
-	     <span>Title: </span>
-	     <span>Nobody</span>
-	     <select name="available_titles" value="Nobody"></select>
-	   </div>
-	   <div>
-	     <div>
-	       <span>Level: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>EXP: </span>
-	       <span>000/1000</span>
-	     </div>
-	   </div>
-	 </div>
-	 <div>
-	   <div>
-	     <span>Strength: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Agility: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Dexterity: </span>
-	     <span>000</span>
-	     </div>
-	 </div>
-	 <!-- End Overview Sub-block -->
-	 <!-- Begin Attributes Sub-block -->
-	 <div>
-	   <!-- Begin Physical Attributes -->
-	   <div>
-	     <div>
-	       <span>Base Physical Attack: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Weapon Modifier: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Total Attack: </span>
-	       <span>000</span>
-	     </div>
-	   </div>
-	   <div>
-	     <div>
-	       <span>Physical Defense: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Armor Modifier: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Total Defense: </span>
-	       <span>00</span>
-	     </div>
-	   </div>
-	   <div>
-	     <div>
-	       <span>Physical Block: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Shield Modifier: </span>
-	       <span>000</span>
-	     </div>
-	     <div>
-	       <span>Total Block: </span>
-	       <span>000</span>
-	     </div>
-	   </div>
-	 </div>
-	 <!-- End Physical Combat Attributes -->
-	 <!-- Begin Magical Combat Attributes -->
-	 <div>
-	   <div>
-	     <span>Base Magic Attack: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Weapon Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Magic Attack: </span>
-	     <span>000</span>
-	   </div>
-	 </div>
-	 <div>
-	   <div>
-	     <span>Base Magic Defense: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Armor Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Magic Defense: </span>
-	     <span>000</span>
-	   </div>
-	 </div>
-	 <div>
-	   <div>
-	     <span>Base Magic Block: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Shield Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Magic Block: </span>
-	     <span>000</span>
-	   </div>
-	 </div>
-	 <!-- End Magic Combat Attributes -->
-	 <!-- Begin Evasion Attributes -->
-	 <div>
-	   <div>
-	     <span>Base Dodge: </span>
-	     <span>000 </span>
-	   </div>
-	   <div>
-	     <span>Armor Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Dodge: </span>
-	     <span>000</span>
-	   </div>
-	 </div>
-	 <div>
-	   <div>
-	     <span>Base Sneak: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Armor Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Sneak: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Base Manuver: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Armor Modifier: </span>
-	     <span>000</span>
-	   </div>
-	   <div>
-	     <span>Total Maneuver: </span>
-	     <span>000</span>
-	   </div>
-	 </div>
-	 <!-- End Evasion Attributes -->
 	</article>
       </section>
     </main>
@@ -299,5 +206,5 @@
   <script src="skills.js"></script>
   <script src="inventory.js"></script>
   <script src="tasks.js"></script>
-  <script src='index.js'></script>
+  <script src="index.js"></script>
 </html>
