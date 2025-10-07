@@ -17,15 +17,9 @@
     <header>
       <div id="player_block">
         <div>
-          <span>Player</span>
-        </div>
-        <div>
           <span>Nobody</span>
           <span> | </span>
           <span>000</span>
-        </div>
-        <div>
-          <span>Location</span>
         </div>
       </div>
       <div id="status_bar">
@@ -56,26 +50,42 @@
           </div>
         </article>
       </section>
+      <section id="activity_block">
+	<nav class="horizontal_nav">
+	  <div class="button button_active">
+	    <span>Activities</span>
+	  </div>
+	  <div class="button">
+	    <span>Gigs</span>
+	  </div>
+	  <div class="button">
+	    <span>Training</span>
+	  </div>
+	  <div class="button">
+	    <span>Crafting</span>
+	  </div>
+	</nav>
+      </section>
       <section id="main_block">
         <nav class="horizontal_nav">
-          <div>
-            <span class="active" id="character_button">
+          <div class="button button_active">
+            <span>
 	      Character
 	    </span>
           </div>
-          <div>
-            <span id="inventory_button">
-	      Inventory
+	  <div class="button">
+	    <span>
+	      Skills
 	    </span>
-          </div>
-          <div>
-            <span id="crafting_button">
-	      Crafting
+	  </div>
+	  <div class="button">
+	    <span>
+	      Equipment
 	    </span>
-          </div>
-          <div>
-            <span id="gigs_button">
-	      Gigs
+	  </div>
+          <div class="button">
+            <span>
+	      Consumables
 	    </span>
           </div>
         </nav>
@@ -140,7 +150,7 @@
 	      <span id="con_text">000</span>
 	    </div>
 	    <div>
-	      <span>perception: </span>
+	      <span>Perception: </span>
 	      <span id="per_text">000</span>
 	    </div>
           </div>
@@ -197,6 +207,78 @@
 	      </div>
 	    </div>
 	  </div>
+	</article>
+	<article id="skills_block">
+	  <div id="physical_skills_block">
+	    <div>
+	      <span>Physical</span>
+	    </div>
+	    <ul id="physical_skills_list">
+	    </ul>
+	  </div>
+	  <div id="magic_skills_block">
+	    <div>
+	      <span>Magic</span>
+	    </div>
+	    <ul id="magic_skills_list">
+	    </ul>
+	  </div>
+	</article>
+	<article id="equipment_block">
+	  <div id="equipment_slots">
+	    <div id="head_slot">
+	      <span>Head: </span>
+	      <span id="head_item_value">Helmet</span>
+	    </div>
+	    <div id="chest_slot">
+	      <span>Chest: </span>
+	      <span id="chest_item_value">Breastplate</span>
+	    </div>
+	    <div id="legs_slot">
+	      <span>Legs: </span>
+	      <span id="legs_item_value">Pants</span>
+	    </div>
+	    <div id="arms_slot">
+	      <span>Arms: </span>
+	      <span id="arms_item_value">Bracers</span>
+	    </div>
+	    <div id="hands_slot">
+	      <span>Hands: </span>
+	      <span id="hands_item_value">Gloves</span>
+	    </div>
+	    <div id="feet_slot">
+	      <span>Feet: </span>
+	      <span id="feet_item_value">Boots</span>
+	    </div>
+	    <div id="weapon_slot_1">
+	      <span>Weapon (R): </span>
+	      <span id="weapon_1_item_value">Sword</span>
+	    </div>
+	    <div id="weapon_slot_2">
+	      <span>Weapon (L): </span>
+	      <span id="weapon_2_item_value">Shield</span>
+	    </div>
+	    <div id="neck_slot">
+	      <span>Necklace: </span>
+	      <span id="neck_item_value">Amulet</span>
+	    </div>
+	    <div id="ring_slot_1">
+	      <span>Ring (R): </span>
+	      <span id="ring_1_item_value">Copper Ring</span>
+	    </div>
+	    <div id="ring_slot_2">
+	      <span>Ring (L): </span>
+	      <span id="ring_2_item_value">Copper Ring</span>
+	    </div>
+	    <div id="belt_slot">
+	      <span>Belt: </span>
+	      <span id="belt_item_value">Leather Belt</span>
+	    </div>
+	  </div>
+	  <div id="equipables_list">
+	  </div>
+	</article>
+	<article id="consumables_block">
 	</article>
       </section>
     </main>
