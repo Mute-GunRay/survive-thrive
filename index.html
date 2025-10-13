@@ -17,7 +17,7 @@
     <header>
       <div id="player_block">
         <div>
-          <span>Nobody</span>
+          <span id="player_title">Nobody</span>
           <span> | </span>
           <span>000</span>
         </div>
@@ -52,44 +52,36 @@
       </section>
       <section id="activity_block">
 	<nav class="horizontal_nav">
-	  <div class="button button_active">
-	    <span>Activities</span>
-	  </div>
-	  <div class="button">
-	    <span>Gigs</span>
-	  </div>
-	  <div class="button">
-	    <span>Training</span>
-	  </div>
-	  <div class="button">
-	    <span>Crafting</span>
-	  </div>
+	  <button class="button button_active">
+	    activities
+	  </button>
+	  <button class="button">
+	    gigs
+	  </button>
+	  <button class="button">
+	    training
+	  </button>
+	  <button class="button">
+	    crafting
+	  </button>
 	</nav>
       </section>
       <section id="main_block">
         <nav class="horizontal_nav">
-          <div class="button button_active">
-            <span>
-	      Character
-	    </span>
-          </div>
-	  <div class="button">
-	    <span>
-	      Skills
-	    </span>
-	  </div>
-	  <div class="button">
-	    <span>
-	      Equipment
-	    </span>
-	  </div>
-          <div class="button">
-            <span>
-	      Consumables
-	    </span>
-          </div>
+          <button class="button button_active">
+	    character
+          </button>
+	  <button class="button">
+	      skills
+	  </button>
+	  <button class="button">
+	      equipment
+	  </button>
+          <button class="button">
+	      consumables
+          </button>
         </nav>
-        <article class="show" id="character_block">
+        <article class="show" id="character">
 	  <div id="overview_wrapper">
             <div id="title_block">
               <span>Title: </span>
@@ -98,60 +90,60 @@
             <div id="level_block">
               <div>
                 <span>Level: </span>
-                <span id="level_text">000</span>
+                <span id="level_value">000</span>
               </div>
               <div>
 		<span>EXP: </span>
-		<span id="exp_current_text">000</span>
+		<span id="exp_current_value">000</span>
 		<span> / </span>
-		<span id="exp_needed_text">1000</span>
+		<span id="exp_needed_value">1000</span>
               </div>
             </div>
 	    <div id="points_block">
 	      <div>
 		<span>HP: </span>
-		<span id="hp_current_text">000</span>
+		<span id="hp_current_value">000</span>
 		<span> / </span>
-		<span id="hp_max_text">100</span>
+		<span id="hp_max_value">100</span>
 	      </div>
 	      <div>
 		<span>SP: </span>
-		<span id="sp_current_text">000</span>
+		<span id="sp_current_value">000</span>
 		<span> / </span>
-		<span id="sp_max_text">100</span>
+		<span id="sp_max_value">100</span>
 	      </div>
 	      <div>
 		<span>MP: </span>
-		<span id="mp_current_text">000</span>
+		<span id="mp_current_value">000</span>
 		<span> / </span>
-		<span id="mp_max_text">100</span>
+		<span id="mp_max_value">100</span>
 	      </div>
 	    </div>
 	  </div>
           <div id="stat_wrapper">
             <div>
 	      <span>Strength: </span>
-	      <span id="str_text">000</span>
+	      <span id="str_value">000</span>
             </div>
             <div>
 	      <span>Agility: </span>
-	      <span id="agi_text">000</span>
+	      <span id="agi_value">000</span>
             </div>
             <div>
 	      <span>Dexterity: </span>
-	      <span id="dex_text">000</span>
+	      <span id="dex_value">000</span>
             </div>
 	    <div>
 	      <span>Intelligence: </span>
-	      <span id="int_text">000</span>
+	      <span id="int_value">000</span>
 	    </div>
 	    <div>
 	      <span>Constitution: </span>
-	      <span id="con_text">000</span>
+	      <span id="con_value">000</span>
 	    </div>
 	    <div>
 	      <span>Perception: </span>
-	      <span id="per_text">000</span>
+	      <span id="per_value">000</span>
 	    </div>
           </div>
 	  <div id="attributes_wrapper">
@@ -208,7 +200,7 @@
 	    </div>
 	  </div>
 	</article>
-	<article id="skills_block">
+	<article id="skills">
 	  <div id="physical_skills_block">
 	    <div>
 	      <span>Physical</span>
@@ -224,7 +216,7 @@
 	    </ul>
 	  </div>
 	</article>
-	<article id="equipment_block">
+	<article id="equipment">
 	  <div id="equipment_slots">
 	    <div id="head_slot">
 	      <span>Head: </span>
@@ -278,7 +270,7 @@
 	  <div id="equipables_list">
 	  </div>
 	</article>
-	<article id="consumables_block">
+	<article id="consumables">
 	</article>
       </section>
     </main>

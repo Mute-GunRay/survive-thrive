@@ -1,18 +1,21 @@
 class Player {
     constructor({
-	player_name = "Player",
 	title = "nobody",
 	skills = {},
 	inventory = {},
     }){
-	this.player_name = player_name;
 	this.title = title;
+	this.level = 1;
+	this.exp_current = 0;
+	this.exp_needed = 1100;
 	this.skills = skills;
 	this.inventory = [];
 	this.health_max = 100;
 	this.health_current = 100;
 	this.energy_max = 100;
 	this.energy_current = 100;
+	this.mana_max = 100;
+	this.mana_current = 100;
 	this.strength = 1;
 	this.agility = 1;
 	this.dexterity = 1;

@@ -2,31 +2,61 @@ let currentMinute = 0;
 let currentHour = 0;
 let currentDay = 0;
 
-let taskSelects = Array.from(document.getElementsByClassName('tasks'));
-
-/*
 let player = new Player({});
+
+// wrap this is a function?
+
 document.getElementById("player_title").textContent = player.title;
-document.getElementById("strength_number").textContent = player.strength;
-document.getElementById("agility_number").textContent = player.agility;
-document.getElementById("int_number").textContent = player.intelligence;
-document.getElementById("con_number").textContent = player.constitution;
-document.getElementById("obs_number").textContent = player.observation;
+document.getElementById("str_value").textContent = player.strength;
+document.getElementById("agi_value").textContent = player.agility;
+document.getElementById("int_value").textContent = player.intelligence;
+document.getElementById("con_value").textContent = player.constitution;
+document.getElementById("per_value").textContent = player.perception;
+document.getElementById("dex_value").textContent = player.dexterity;
+
+document.getElementById("level_value").textContent = player.level;
+document.getElementById("exp_current_value").textContent = player.exp_current;
+document.getElementById("exp_needed_value").textContent = player.exp_needed;
+
+document.getElementById("hp_current_value").textContent = player.health_current
+document.getElementById("hp_max_value").textContent = player.health_max;
+
+document.getElementById("sp_current_value").textContent = player.energy_current;
+document.getElementById("sp_max_value").textContent = player.energy_max;
+
+document.getElementById("mp_current_value").textContent = player.mana_current;
+document.getElementById("mp_max_value").textContent = player.mana_max;
+
+document.getElementById("health_bar").value = player.health_current;
+document.getElementById("health_bar").max = player.health_max;
+
+document.getElementById("stamina_bar").value = player.energy_current;
+document.getElementById("stamina_bar").max = player.energy_max;
+
+document.getElementById("mana_bar").value = player.mana_current;
+document.getElementById("mana_bar").max = player.mana_max;
+
+[...document.getElementsByClassName("button")].forEach((button) => {
+    button.addEventListener("click", (event) => {
+	event.preventDefault;
+	let siblings = [...event.target.parentElement.children]
+	let class_list = [...event.target.classList];
+	if(!class_list.includes("button_active")) {
+	    siblings.forEach(sibling => {
+		if([...sibling.classList].includes("button_active")){
+		    sibling.className = "button";
+		    document.getElementById(sibling.innerText).className = "";
+		    return;
+		}
+	    })
+	    document.getElementById(event.target.innerText).className = "show";
+	}
+	event.target.className = "button button_active";
+    })
+})
 
 function renderSkills(){
     let skill_keys = Object.keys(skills);
-    let social_skills_block = document.getElementById("social")
-    let tech_skills_block = document.getElementById("tech")
-    let combat_skills_block = document.getElementById("combat")
-    let knowledge_skills_block = document.getElementById("knowledge")
-    let magic_skills_block = document.getElementById("magic")
-    let physical_skills_block = document.getElementById("physical")
-    let social_skills_list = document.createElement('ul')
-    let tech_skills_list = document.createElement('ul')
-    let combat_skills_list = document.createElement('ul')
-    let knowledge_skills_list = document.createElement('ul')
-    let magic_skills_list = document.createElement('ul')
-    let physical_skills_list = document.createElement('ul')
     
     skill_keys.forEach(skill_key => {
 	let skill_shard = document.createElement('li');
@@ -61,16 +91,7 @@ function renderSkills(){
 	    break;
 	}
     })
-
-    social_skills_block.appendChild(social_skills_list)
-    tech_skills_block.appendChild(tech_skills_list)
-    combat_skills_block.appendChild(combat_skills_list)
-    knowledge_skills_block.appendChild(knowledge_skills_list)
-    magic_skills_block.appendChild(magic_skills_list)
-    physical_skills_block.appendChild(physical_skills_list)
 }
-*/
-
 function tickMinute(){
     currentMinute == 59 ? currentMinute = 0 : currentMinute++;
     if(currentMinute < 10){
@@ -85,7 +106,5 @@ function tickHour(){
     document.getElementById("current_hour").textContent = currentHour;
 }
 
-renderSkills();
-
-setInterval(tickMinute, 1000);
-setInterval(tickHour, 60000);
+//setInterval(tickMinute, 1000);
+//setInterval(tickHour, 60000);
