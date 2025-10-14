@@ -1,24 +1,33 @@
-const activities_gig = {}
-const activities_train = {}
-const activities_socialize = {}
-const activites_learn = {}
-const activities_craft = {}
+/*
+  - gigs should be low requirment, low reward activities that can be done without player input beyond flagging them to be done
+  - training should also be able to be done passively but should consume stamina/mana based on the activity
+  - all other activities should only be done through player interaction
+  - all passive activities that do not consume points should have a set start and end time
+  - any activites that do consume points should fill any time gaps left by the players psuedo schedule
+ */
+
+const gigs = {}
+const train = {}
+const socialize = {}
+const learn = {}
+const craft = {}
       
 class activity {
     constructor({
-	task_name ="task",
 	description = "a task",
-	requirements_stats = {},
-	requirements_skills = {},
+	requirements = {},
+	catagory = "misc"
     }){
 	this.task_name = task_name;
 	this.description = description;
-	this.requirements_stats = requirements_stats;
-	this.requirements_skills = requirements_skills;
+	this.requirements = requirements;
+	this.catagory = catagory;
     }
 }
 
-class Gig extends activity {}
+class Gig extends activity {
+    
+}
 class Train extends activity {}
 class Socialize extends activity {}
 class Learn extends activity {}

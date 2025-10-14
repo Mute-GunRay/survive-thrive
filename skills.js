@@ -1,63 +1,45 @@
+/*
+  NOTES:
+  - Should skills have level caps?(what benefit is there?)
+  - Need to figure out EXP Curve. (Simple exponential curve?)
+  - skills should be locked and hidden by default.
+  - stat requirements should be an object with Stat/Skill:Level format
+  - What catagories should exist? (Physical, Magical, Crafting, Observational; but what others?)
+  - should I make each catagory its own skill object? (would make organizing easier, and would require less logic to render them)
+  - unlocking/showing a skill should be a class method as well as checking if requirements are met. (requirements object should have a way to to flag each specific requirement as being met)
+  - effects should be tied directly to an attribute. (atrribute values should be fields in the player class)
+ */
+
+
 const skills = {};
 
 class Skill {
     constructor({
-	name,
 	description,
-	level_max = 100,
-	xp_cost_base = 100,
-	xp_cost_scaler = 1.1,
 	catagory = 'misc',
-	primary_stat,
-	is_visible = false,
-	is_unlocked = true,
+	requirements = {},
+	effects = {}
     }){
-	this.name = name;
 	this.description = description;
 	this.catagory = catagory;
-	this.level_max = level_max,
 	this.level_current = 0;
-	this.xp_cost_base = xp_cost_base;
-	this.xp_cost_next_level = xp_cost_base;
-	this.xp_cost_scaler = xp_cost_scaler;
-	this.primary_stat = primary_stat;
-	this.is_visible = is_visible;
-	this.is_unlocked = is_unlocked;
+	this.xp_cost = 100;
 	this.xp_current = 0;
-	this.is_visible_threshhold = 10;
+	this.requirements = requirements;
+	this.is_visible = false;
+	this.is_unlocked = false;
+	this.effects = effects;
     }
 
     increase_xp(xp_delta = 0) {
 	if(xp_delta == 0 || !this.is_unlocked){
-	    return {};
-	}
-
-	if(this.current_level < this.max_level){
-	    this.xp_current = this.xp_current + xp_delta;
-	    let level_delta = 0;
-	    while (xp_current >= xp_cost_next_level) {
-		level_delta++;
-		xp_cost_next_level = ((100*current_level)*xp_scaler)/level_max;
-	    }
-	    if(level_delta == 0){
-		return {};
-	    } else {
-		this.level_current = this.level_current + level_delta
-	    }
+	    return;
 	} else {
-	    console.log("Max level reached");
-	    return {};
+	    this.xp_current += xp_delta;
 	}
     }
 }
 
-skills['lead'] = new Skill({
-    name: "Leadership",
-    description: "Make people follow you",
-    catagory: 'social',
-    primary_stat: 'spirit',
-})
-// these are weapon skills
 skills["unarmed"] = new Skill({
     name: "Unarmed",
     description: "Fighting with your body",
@@ -98,72 +80,66 @@ skills["casting"] = new Skill({
 skills["learning"] = new Skill({
     name: "learning",
     description: "how proficent you are at retaining information",
-    catagory: 'magic',
+    catagory: 'mental',
     primary_stat: 'spirit'
 })
 // Perception
 skills["observe"] = new Skill({
     name: "Observation",
     description: "how proficent you are at analyzing your surrounding",
-    catagory: 'knowledge',
+    catagory: 'mental',
     primary_stat: 'Mind'
 })
 skills["predict"] = new Skill({
     name: "Prediction",
     description: "how proficent you are at anticipating events",
-    catagory: 'magic',
+    catagory: 'mental',
     primary_stat: 'spirit'
 })
 //Agility
 skills["dodge"] = new Skill({
     name: "Dodge",
     description: "how proficent you are at avoiding blows",
-    catagory: 'magic',
+    catagory: 'combat',
     primary_stat: 'spirit'
 })
 skills["block"] = new Skill({
     name: "Block",
     description: "how proficent you are at absorbing blows",
-    catagory: 'magic',
-    primary_stat: 'spirit'
-})
-skills["speed"] = new Skill({
-    name: "Speed",
-    description: "how quick you are",
-    catagory: 'magic',
+    catagory: 'combat',
     primary_stat: 'spirit'
 })
 // Strength
 skills["strike"] = new Skill({
     name: "Strike",
     description: "how hard you hit",
-    catagory: 'magic',
+    catagory: 'combat',
     primary_stat: 'spirit'
 })
 skills["grapple"] = new Skill({
     name: "Grapple",
-    description: "how proficent you are at grabbving and holding ",
-    catagory: 'magic',
+    description: "how proficent you are at grabbing and holding ",
+    catagory: 'combat',
     primary_stat: 'spirit'
 })
 // Dexterity
 skills["sneak"] = new Skill({
     name: "Stealth",
-    description: "how proficent you are at sneaking",
-    catagory: 'magic',
+    description: "how proficent you are at moving without being seen",
+    catagory: 'physical',
     primary_stat: 'spirit'
 })
 skills["acrobatics"] = new Skill({
     name: "Acrobatics",
     description: "how proficent you are at moving",
-    catagory: 'magic',
+    catagory: 'physical',
     primary_stat: 'spirit'
 })
 // Constitution
 skills["endurance"] = new Skill({
     name: "Endurence",
     description: "how well you use your stamina",
-    catagory: 'magic',
+    catagory: 'physical',
     primary_stat: 'spirit'
 })
 skills["control"] = new Skill({
@@ -174,39 +150,39 @@ skills["control"] = new Skill({
 })
 skills["resist"] = new Skill({
     name: "Resistance",
-    description: "how you handle poisons",
-    catagory: 'magic',
+    description: "how you handle poisons and other maladies",
+    catagory: 'physical',
     primary_stat: 'spirit'
 })
 // Crafting
 skills["alchemy"] = new Skill({
     name: "Chemistry",
     description: "how proficent you are at crafting potions, poisons, and elixers",
-    catagory: 'magic',
+    catagory: 'Crafting',
     primary_stat: 'spirit'
 })
 skills["guns"] = new Skill({
     name: "Gun Smithing",
     description: "how proficent you are at making weapons and armor",
-    catagory: 'magic',
+    catagory: 'crafting',
     primary_stat: 'spirit'
 })
 skills["blades"] = new Skill({
     name: "Blade Smithing",
     description: "how proficent you are at making weapons and armor",
-    catagory: 'magic',
+    catagory: 'crafting',
     primary_stat: 'spirit'
 })
 skills["armor"] = new Skill({
     name: "Armor Smithing",
     description: "how proficent you are at making weapons and armor",
-    catagory: 'magic',
+    catagory: 'crafting',
     primary_stat: 'spirit'
 })
 skills["tech"] = new Skill({
     name: "Tech",
     description: "how proficent you are at making gadgets and gizmos",
-    catagory: 'magic',
+    catagory: 'crafting',
     primary_stat: 'spirit'
 })
 

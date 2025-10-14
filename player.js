@@ -1,19 +1,19 @@
+/*
+  - class methods need to be updated to reflect new stats
+  - add expences related fields that give buffs as cost increases (to give that really dystopian feel)
+  - possible titles should be an object wiht title:requirements{} pairs
+ */
+
 class Player {
-    constructor({
-	title = "nobody",
-	skills = {},
-	inventory = {},
-    }){
-	this.title = title;
+    constructor(){
+	this.title = "nobody";
 	this.level = 1;
 	this.exp_current = 0;
 	this.exp_needed = 1100;
-	this.skills = skills;
-	this.inventory = [];
 	this.health_max = 100;
 	this.health_current = 100;
-	this.energy_max = 100;
-	this.energy_current = 100;
+	this.stamina_max = 100;
+	this.stamina_current = 100;
 	this.mana_max = 100;
 	this.mana_current = 100;
 	this.strength = 1;
