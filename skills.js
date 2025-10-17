@@ -1,34 +1,25 @@
-/*
-  NOTES:
-  - Should skills have level caps?(what benefit is there?)
-  - Need to figure out EXP Curve. (Simple exponential curve?)
-  - skills should be locked and hidden by default.
-  - stat requirements should be an object with Stat/Skill:Level format
-  - What catagories should exist? (Physical, Magical, Crafting, Observational; but what others?)
-  - should I make each catagory its own skill object? (would make organizing easier, and would require less logic to render them)
-  - unlocking/showing a skill should be a class method as well as checking if requirements are met. (requirements object should have a way to to flag each specific requirement as being met)
-  - effects should be tied directly to an attribute. (atrribute values should be fields in the player class)
- */
-
-
-const skills = {};
+const core_skills = {};
+const gun_skills = {};
+const blade_skills = {};
+const body_skills = {};
+const mind_skills = {};
+const spell_skills = {};
+const armor_skills = {};
+const crafting_skills = {};
+const bow_skills = {};
 
 class Skill {
     constructor({
 	description,
-	catagory = 'misc',
 	requirements = {},
-	effects = {}
     }){
 	this.description = description;
-	this.catagory = catagory;
 	this.level_current = 0;
 	this.xp_cost = 100;
 	this.xp_current = 0;
 	this.requirements = requirements;
-	this.is_visible = false;
+	this.is_visible = true;
 	this.is_unlocked = false;
-	this.effects = effects;
     }
 
     increase_xp(xp_delta = 0) {
@@ -39,150 +30,73 @@ class Skill {
 	}
     }
 }
-
-skills["unarmed"] = new Skill({
-    name: "Unarmed",
-    description: "Fighting with your body",
-    catagory: 'combat',
-    primary_stat: 'body'
-})
-skills["small guns"] = new Skill({
-    name: "Guns",
-    description: "handle guns",
-    catagory: 'combat',
-    primary_stat: 'body'
-})
-skills["blades"] = new Skill({
-    name: "Blades",
-    description: "handle blades",
-    catagory: 'combat',
-    primary_stat: 'body'
-})
-skills["small shields"] = new Skill({
-    name: "Shields",
-    description: "handle shields",
-    catagory: 'combat',
-    primary_stat: 'body'
-})
-skills["bows"] = new Skill({
-    name: "Bows",
-    description: "handle bows and crossbows",
-    catagory: 'combat',
-    primary_stat: 'body'
-})
-// these are intelligence skills
-skills["casting"] = new Skill({
-    name: "Casting",
-    description: "how proficent you are at using spells",
-    catagory: 'magic',
-    primary_stat: 'spirit'
-})
-skills["learning"] = new Skill({
-    name: "learning",
-    description: "how proficent you are at retaining information",
-    catagory: 'mental',
-    primary_stat: 'spirit'
-})
-// Perception
-skills["observe"] = new Skill({
-    name: "Observation",
-    description: "how proficent you are at analyzing your surrounding",
-    catagory: 'mental',
-    primary_stat: 'Mind'
-})
-skills["predict"] = new Skill({
-    name: "Prediction",
-    description: "how proficent you are at anticipating events",
-    catagory: 'mental',
-    primary_stat: 'spirit'
-})
-//Agility
-skills["dodge"] = new Skill({
-    name: "Dodge",
-    description: "how proficent you are at avoiding blows",
-    catagory: 'combat',
-    primary_stat: 'spirit'
-})
-skills["block"] = new Skill({
-    name: "Block",
-    description: "how proficent you are at absorbing blows",
-    catagory: 'combat',
-    primary_stat: 'spirit'
-})
-// Strength
-skills["strike"] = new Skill({
-    name: "Strike",
-    description: "how hard you hit",
-    catagory: 'combat',
-    primary_stat: 'spirit'
-})
-skills["grapple"] = new Skill({
-    name: "Grapple",
-    description: "how proficent you are at grabbing and holding ",
-    catagory: 'combat',
-    primary_stat: 'spirit'
-})
-// Dexterity
-skills["sneak"] = new Skill({
-    name: "Stealth",
-    description: "how proficent you are at moving without being seen",
-    catagory: 'physical',
-    primary_stat: 'spirit'
-})
-skills["acrobatics"] = new Skill({
-    name: "Acrobatics",
-    description: "how proficent you are at moving",
-    catagory: 'physical',
-    primary_stat: 'spirit'
-})
-// Constitution
-skills["endurance"] = new Skill({
-    name: "Endurence",
-    description: "how well you use your stamina",
-    catagory: 'physical',
-    primary_stat: 'spirit'
-})
-skills["control"] = new Skill({
-    name: "Mana Control",
-    description: "how well you use your mana",
-    catagory: 'magic',
-    primary_stat: 'spirit'
-})
-skills["resist"] = new Skill({
-    name: "Resistance",
-    description: "how you handle poisons and other maladies",
-    catagory: 'physical',
-    primary_stat: 'spirit'
-})
+//Core Skills
+core_skills["strength"]
+core_skills["agility"]
+core_skills["constitution"]
+core_skills["perception"]
+core_skills["dexterity"]
+core_skills["intelligence"]
+core_skills["guns"]
+core_skills["blades"]
+core_skills["armor"]
+core_skills["bow"]
+core_skills["shields"]
+core_skills["crafting"]
+// Gun Skills
+gun_skills["hand guns"]
+gun_skills["submachine guns"]
+gun_skills["rifles"]
+gun_skills["battle rifles"] 
+gun_skills["assult rifles"]
+gun_skills["sniper rifles"]
+//Blade Skills
+blade_skills["knives"]
+blade_skills["short swords"]
+blade_skills["straight swords"]
+blade_skills["curved swords"]
+blade_skills["long swords"]
+blade_skills["great swords"]
+//Armor Skills
+armor_skills["light armor"]
+armor_skills["medium armor"]
+armor_skills["heavy armor"]
+armor_skills["light shields"]
+armor_skills["medium shields"]
+armor_skills["heavy shields"]
+//Body Skills
+body_skills["resist"]
+body_skills["dodge"]
+body_skills["block"]
+body_skills["strike"]
+body_skills["grapple"]
+body_skills["sneak"]
+body_skills["acrobatics"]
+body_skills["endurance"]
+//Mind Skills
+mind_skills["learning"]
+mind_skills["prediction"]
+mind_skills["memory"]
+mind_skills["comprehension"]
+//Spell Skills
+spell_skills["spell casting"]
+spell_skills["mana control"]
+spell_skills["summoning"]
+spell_skills["elemental spells"]
+spell_skills["healing spells"]
+//Bow Skills
+bow_skills["short bows"]
+bow_skills["long bows"]
+bow_skills["heavy bows"]
+bow_skills["light crossbows"]
+bow_skills["medium crossbows"]
+bow_skills["heavy crossbows"]
 // Crafting
-skills["alchemy"] = new Skill({
-    name: "Chemistry",
-    description: "how proficent you are at crafting potions, poisons, and elixers",
-    catagory: 'Crafting',
-    primary_stat: 'spirit'
-})
-skills["guns"] = new Skill({
-    name: "Gun Smithing",
-    description: "how proficent you are at making weapons and armor",
-    catagory: 'crafting',
-    primary_stat: 'spirit'
-})
-skills["blades"] = new Skill({
-    name: "Blade Smithing",
-    description: "how proficent you are at making weapons and armor",
-    catagory: 'crafting',
-    primary_stat: 'spirit'
-})
-skills["armor"] = new Skill({
-    name: "Armor Smithing",
-    description: "how proficent you are at making weapons and armor",
-    catagory: 'crafting',
-    primary_stat: 'spirit'
-})
-skills["tech"] = new Skill({
-    name: "Tech",
-    description: "how proficent you are at making gadgets and gizmos",
-    catagory: 'crafting',
-    primary_stat: 'spirit'
-})
-
+crafting_skills["chemisty"]
+crafting_skills["electronics"]
+crafting_skills["gunsmithing"]
+crafting_skills["bladesmithing"]
+crafting_skills["armorsmithing"]
+crafting_skills["bow making"]
+crafting_skills["spell crafting"]
+crafting_skills["enchanting"]

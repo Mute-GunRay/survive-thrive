@@ -1,3 +1,10 @@
+/*
+  update body grid to include new blocks.
+  update progress bars to use proper colors.
+  write rules for skill block and indevidule skills.
+  fix style rules for buttons to be inline with rest of styles.
+*/
+
 :root {
     --black: #24283b;
     --blue: #7aa2f7;
