@@ -21,264 +21,132 @@
     />
   </head>
   <body>
-    <header>
-      <div id="player_block">
-        <div>
-          <span id="player_title">Nobody</span>
-          <span> | </span>
-          <span>000</span>
-        </div>
-      </div>
-      <div id="status_bar">
-        <div>
-          <span>HP: </span>
-          <progress id="health_bar" max="100" value="68">68</progress>
-        </div>
-        <div>
-          <span>SP: </span>
-          <progress id="stamina_bar" max="100" value="35">35</progress>
-        </div>
-        <div>
-          <span>MP: </span>
-          <progress id="mana_bar" max="100" value="87">87</progress>
-        </div>
-      </div>
-    </header>
     <main>
-      <section id="side_bar">
-        <nav class="horizontal_nav">
-            <div>
-              <span>Messages</span>
-            </div>
-        </nav>
-        <article class="show" id="message_block">
+      <section class="block" id="status">
+	<div>
+	  <span>Name</span>
+	  <span> | </span>
+	  <span>Role</span>
+	  <span> | </span>
+	  <span>Rank</span>
+	</div>
+	<div>
+	  <progress value="100" max="100"></progress>
+	  <div>
+	    <span id="health_regen_change">+</span>
+	    <span id="health_regen_value">0.0</span>
+	    <span>/ sec</span>
+	  </div>
+	</div>
+	<div>
+	  <progress value="100" max="100"></progress>
+	  <div>
+	    <span id="stamina_regen_change">+</span>
+	    <span id="stamina_regen_value">0.0</span>
+	    <span>/ sec</span>
+	  </div>
+	</div>
+	<div>
+	  <progress value="100" max="100"></progress>
+	  <div>
+	    <span id="mana_regen_change">+</span>
+	    <span id="mana_regen_value">0.0</span>
+	    <span>/ sec</span>
+	  </div>
+	</div>
+      </section>
+      <section id="messages">
+        <div>
+          <h3>Messages</h3>
+        </div>
+        <article id="message_block">
           <div>
             <p>This is a filler message</p>
           </div>
         </article>
       </section>
-      <section id="activity_block">
-	<nav class="horizontal_nav">
-	  <button class="button button_active">
-	    activities
-	  </button>
-	  <button class="button">
-	    gigs
-	  </button>
-	  <button class="button">
-	    training
-	  </button>
-	  <button class="button">
-	    crafting
-	  </button>
-	</nav>
+      <section id="activity">
+	<span class="button button_active" id="gigs_button">
+	  Gigs
+	</span>
+	<span class="button" id="contracts_button">
+	  Contracts
+	</span>
+	<span class="button" id="guilds_button">
+	  Guilds
+	</span>
+	<div class="container">
+	  <article class="show" id="gigs"></article>
+	  <article id="contracts"></article>
+	  <article id="guild"></article>
+	</div>
       </section>
-      <section id="main_block">
-        <nav class="horizontal_nav">
-          <button class="button button_active">
-	    character
-          </button>
-	  <button class="button">
-	      skills
-	  </button>
-	  <button class="button">
-	      equipment
-	  </button>
-          <button class="button">
-	      consumables
-          </button>
-        </nav>
-        <article class="show" id="character">
-	  <div id="overview_wrapper">
-            <div id="title_block">
-              <span>Title: </span>
-              <span id="title_text">Nobody</span>
-            </div>
-            <div id="level_block">
-              <div>
-                <span>Level: </span>
-                <span id="level_value">000</span>
-              </div>
-              <div>
-		<span>EXP: </span>
-		<span id="exp_current_value">000</span>
-		<span> / </span>
-		<span id="exp_needed_value">1000</span>
-              </div>
-            </div>
-	    <div id="points_block">
-	      <div>
-		<span>HP: </span>
-		<span id="hp_current_value">000</span>
-		<span> / </span>
-		<span id="hp_max_value">100</span>
-	      </div>
-	      <div>
-		<span>SP: </span>
-		<span id="sp_current_value">000</span>
-		<span> / </span>
-		<span id="sp_max_value">100</span>
-	      </div>
-	      <div>
-		<span>MP: </span>
-		<span id="mp_current_value">000</span>
-		<span> / </span>
-		<span id="mp_max_value">100</span>
-	      </div>
+      <section id="skills">
+	<h3>Skills</h3>
+	<div class="container" id="skill_lists">
+	  <div>
+	    <h4>Core Skills</h4>
+	    <div class="skill_list" id="core">
 	    </div>
 	  </div>
-          <div id="stat_wrapper">
-            <div>
-	      <span>Strength: </span>
-	      <span id="str_value">000</span>
-            </div>
-            <div>
-	      <span>Agility: </span>
-	      <span id="agi_value">000</span>
-            </div>
-            <div>
-	      <span>Dexterity: </span>
-	      <span id="dex_value">000</span>
-            </div>
-	    <div>
-	      <span>Intelligence: </span>
-	      <span id="int_value">000</span>
-	    </div>
-	    <div>
-	      <span>Constitution: </span>
-	      <span id="con_value">000</span>
-	    </div>
-	    <div>
-	      <span>Perception: </span>
-	      <span id="per_value">000</span>
-	    </div>
-          </div>
-	  <div id="attributes_wrapper">
-	    <div id="physical_block">
-              <div>
-		<span>Physical Attack: </span>
-		<span>000 </span>
-		<span>(000)</span>
-              </div>
-              <div>
-		<span>Physical Defense: </span>
-		<span>000 </span>
-		<span>(000)</span>
-              </div>
-              <div>
-		<span>Physical Block chance: </span>
-		<span>000 </span>
-		<span>(000)</span>
-              </div>
-	    </div>
-	    <div id="magic_block">
-              <div>
-		<span>Magic Attack: </span>
-		<span>000 </span>
-		<span>(000)</span>
-              </div>
-              <div>
-		<span>Magic Defense: </span>
-		<span>000</span>
-		<span>(000)</span>
-              </div>
-              <div>
-		<span>Block Chance: </span>
-		<span>000</span>
-		<span>(000)</span>
-              </div>
-	    </div>
-	    <div>
-              <div>
-		<span>Dodge: </span>
-		<span>000 </span>
-		<span>(000)</span>
-              </div>
-              <div>
-		<span>Sneak: </span>
-		<span>000</span>
-		<span>(000)</span>
-		<div>
-		  <span>Manuver: </span>
-		  <span>000</span>
-		  <span>(000)</span>
-		</div>
-	      </div>
+	  <div>
+	    <h4>Body Skills</h4>
+	    <div class="skill_list" id="body">
 	    </div>
 	  </div>
-	</article>
-	<article id="skills">
-	  <div id="physical_skills_block">
-	    <div>
-	      <span>Physical</span>
-	    </div>
-	    <ul id="physical_skills_list">
-	    </ul>
-	  </div>
-	  <div id="magic_skills_block">
-	    <div>
-	      <span>Magic</span>
-	    </div>
-	    <ul id="magic_skills_list">
-	    </ul>
-	  </div>
-	</article>
-	<article id="equipment">
-	  <div id="equipment_slots">
-	    <div id="head_slot">
-	      <span>Head: </span>
-	      <span id="head_item_value">Helmet</span>
-	    </div>
-	    <div id="chest_slot">
-	      <span>Chest: </span>
-	      <span id="chest_item_value">Breastplate</span>
-	    </div>
-	    <div id="legs_slot">
-	      <span>Legs: </span>
-	      <span id="legs_item_value">Pants</span>
-	    </div>
-	    <div id="arms_slot">
-	      <span>Arms: </span>
-	      <span id="arms_item_value">Bracers</span>
-	    </div>
-	    <div id="hands_slot">
-	      <span>Hands: </span>
-	      <span id="hands_item_value">Gloves</span>
-	    </div>
-	    <div id="feet_slot">
-	      <span>Feet: </span>
-	      <span id="feet_item_value">Boots</span>
-	    </div>
-	    <div id="weapon_slot_1">
-	      <span>Weapon (R): </span>
-	      <span id="weapon_1_item_value">Sword</span>
-	    </div>
-	    <div id="weapon_slot_2">
-	      <span>Weapon (L): </span>
-	      <span id="weapon_2_item_value">Shield</span>
-	    </div>
-	    <div id="neck_slot">
-	      <span>Necklace: </span>
-	      <span id="neck_item_value">Amulet</span>
-	    </div>
-	    <div id="ring_slot_1">
-	      <span>Ring (R): </span>
-	      <span id="ring_1_item_value">Copper Ring</span>
-	    </div>
-	    <div id="ring_slot_2">
-	      <span>Ring (L): </span>
-	      <span id="ring_2_item_value">Copper Ring</span>
-	    </div>
-	    <div id="belt_slot">
-	      <span>Belt: </span>
-	      <span id="belt_item_value">Leather Belt</span>
+	  <div>
+	    <h4>Mind Skills</h4>
+	    <div class="skill_list" id="mind">
 	    </div>
 	  </div>
-	  <div id="equipables_list">
+	  <div>
+	    <h4>Guns Skills</h4>
+	    <div class="skill_list" id="guns">
+	    </div>
 	  </div>
-	</article>
-	<article id="consumables">
-	</article>
+	  <div>
+	    <h4>Blades Skills</h4>
+	    <div class="skill_list" id="blades">
+	    </div>
+	  </div>
+	  <div>
+	    <h4>Bows Skills</h4>
+	    <div class="skill_list" id="bows">
+	    </div>
+	  </div>
+	  <div>
+	    <h4>Spell Skills</h4>
+	    <div class="skill_list" id="spells">
+	    </div>
+	  </div>
+	  <div>
+	    <h4>Armor Skills</h4>
+	    <div class="skill_list" id="armor">
+	    </div>
+	  </div>
+	  <div>
+	    <h4>Crafting Skills</h4>
+	    <div class="skill_list" id="crafts">
+	    </div>
+	  </div>
+	</div>
+      </section>
+      <section id="inventory">
+	<h3>Inventory</h3>
+	<span class="button button_active"
+		id="equipment_button">Equipment</span>
+	<span class="button"
+	      id="consumables_button">Consumables</span>
+	<span class="button"
+	      id="crafting_button">Crafting</span>
+	<span class="button"
+		id="shop_button">Shop</span>
+	<div class="container" id="inventory_body">
+	  <article class="show" id="equipment"></article>
+	  <article id="consumables"></article>
+	  <article id="crafting"></article>
+	  <article id="shop"></article>
+	</div>
       </section>
     </main>
   </body>

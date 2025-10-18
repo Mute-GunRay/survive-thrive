@@ -9,19 +9,20 @@ const crafting_skills = {};
 const bow_skills = {};
 
 class Skill {
-    constructor({
-	description,
+    constructor(
+	name = "name",
+	description = "this is a description",
 	requirements = {},
-    }){
+    ){
+	this.name = name;
 	this.description = description;
 	this.level_current = 0;
-	this.xp_cost = 100;
+	this.xp_max = 100;
 	this.xp_current = 0;
 	this.requirements = requirements;
-	this.is_visible = true;
 	this.is_unlocked = false;
     }
-
+    
     increase_xp(xp_delta = 0) {
 	if(xp_delta == 0 || !this.is_unlocked){
 	    return;
@@ -31,72 +32,73 @@ class Skill {
     }
 }
 //Core Skills
-core_skills["strength"]
-core_skills["agility"]
-core_skills["constitution"]
-core_skills["perception"]
-core_skills["dexterity"]
-core_skills["intelligence"]
-core_skills["guns"]
-core_skills["blades"]
-core_skills["armor"]
-core_skills["bow"]
-core_skills["shields"]
-core_skills["crafting"]
+core_skills["strength"] = new Skill("Strength");
+core_skills["agility"] = new Skill("Agility");
+core_skills["constitution"] = new Skill("Constitution");
+core_skills["perception"] = new Skill("Perception");
+core_skills["dexterity"] = new Skill("Dexterity");
+core_skills["intelligence"] = new Skill("Intelligence");
+core_skills["guns"] = new Skill("Guns");
+core_skills["blades"] = new Skill("Blades");
+core_skills["armor"] = new Skill("Armor");
+core_skills["bow"] = new Skill("Bows");
+core_skills["shields"] = new Skill("Shields");
+core_skills["crafting"] = new Skill("Crafting");
 // Gun Skills
-gun_skills["hand guns"]
-gun_skills["submachine guns"]
-gun_skills["rifles"]
-gun_skills["battle rifles"] 
-gun_skills["assult rifles"]
-gun_skills["sniper rifles"]
+gun_skills["hand_guns"] = new Skill("Hand Guns");
+gun_skills["submachine_guns"] = new Skill("Submachine Guns");
+gun_skills["rifles"] = new Skill("Rifles");
+gun_skills["battle_rifles"] = new Skill("Battle Rifles");
+gun_skills["assult_rifles"] = new Skill("Assult Rifles");
+gun_skills["sniper_rifles"] = new Skill("Sniper Rifles");
 //Blade Skills
-blade_skills["knives"]
-blade_skills["short swords"]
-blade_skills["straight swords"]
-blade_skills["curved swords"]
-blade_skills["long swords"]
-blade_skills["great swords"]
+blade_skills["knives"] = new Skill("Knives");
+blade_skills["short_swords"] = new Skill("Short Swords");
+blade_skills["straight_swords"] = new Skill("Straight Swords");
+blade_skills["curved_swords"] = new Skill("Curved Swords");
+blade_skills["long_swords"] = new Skill("Long Swords");
+blade_skills["great_swords"] = new Skill("Great Swords");
 //Armor Skills
-armor_skills["light armor"]
-armor_skills["medium armor"]
-armor_skills["heavy armor"]
-armor_skills["light shields"]
-armor_skills["medium shields"]
-armor_skills["heavy shields"]
+armor_skills["light_armor"] = new Skill("Light Armor");
+armor_skills["medium_armor"] = new Skill("Medium Armor");
+armor_skills["heavy_armor"] = new Skill("Heavy Armor");
+armor_skills["light_shields"] = new Skill("Light Sheilds");
+armor_skills["medium_shields"] = new Skill("Medium Shields");
+armor_skills["heavy_shields"] = new Skill("Heavy Shields");
 //Body Skills
-body_skills["resist"]
-body_skills["dodge"]
-body_skills["block"]
-body_skills["strike"]
-body_skills["grapple"]
-body_skills["sneak"]
-body_skills["acrobatics"]
-body_skills["endurance"]
+body_skills["resist"] = new Skill("Resistance");
+body_skills["dodge"] = new Skill("Dodge");
+body_skills["block"] = new Skill("Block");
+body_skills["strike"] = new Skill("Strike");
+body_skills["grapple"] = new Skill("Grapple");
+body_skills["sneak"] = new Skill("Sneak");
+body_skills["acrobatics"] = new Skill("Acrobatics");
+body_skills["endurance"] = new Skill("Endurance");
 //Mind Skills
-mind_skills["learning"]
-mind_skills["prediction"]
-mind_skills["memory"]
-mind_skills["comprehension"]
-//Spell Skills
-spell_skills["spell casting"]
-spell_skills["mana control"]
-spell_skills["summoning"]
-spell_skills["elemental spells"]
-spell_skills["healing spells"]
+mind_skills["learning"] = new Skill("Learning");
+mind_skills["prediction"] = new Skill("Prediction");
+mind_skills["memory"] = new Skill("Memory");
+mind_skills["comprehension"] = new Skill("Comprehension");
+//Spell Skills 
+spell_skills["spell_casting"] = new Skill("Casting");
+spell_skills["mana_control"] = new Skill("Mana Control");
+spell_skills["summoning"] = new Skill("Summoning");
+spell_skills["elemental_spells"] = new Skill("Elemenal");
+spell_skills["healing_spells"] = new Skill("Healing");
 //Bow Skills
-bow_skills["short bows"]
-bow_skills["long bows"]
-bow_skills["heavy bows"]
-bow_skills["light crossbows"]
-bow_skills["medium crossbows"]
-bow_skills["heavy crossbows"]
+bow_skills["short_bows"] = new Skill("Short Bows");
+bow_skills["long_bows"] = new Skill("Long Bows");
+bow_skills["heavy_bows"] = new Skill("Heavy Bows");
+bow_skills["light_crossbows"] = new Skill("Light Crossbows");
+bow_skills["medium_crossbows"] = new Skill("Medium Crossbows");
+bow_skills["heavy_crossbows"] = new Skill("Heavy Crossbows");
 // Crafting
-crafting_skills["chemisty"]
-crafting_skills["electronics"]
-crafting_skills["gunsmithing"]
-crafting_skills["bladesmithing"]
-crafting_skills["armorsmithing"]
-crafting_skills["bow making"]
-crafting_skills["spell crafting"]
-crafting_skills["enchanting"]
+crafting_skills["chemisty"] = new Skill("Chemistry");
+crafting_skills["electronics"] = new Skill("Electronics");
+crafting_skills["gunsmithing"] = new Skill("Gunsmithing");
+crafting_skills["bladesmithing"] = new Skill("Bladesmithing");
+crafting_skills["armorsmithing"] = new Skill("ArmorSmithing");
+crafting_skills["bow_making"] = new Skill("Bow Crafting");
+crafting_skills["spell_crafting"] = new Skill("Spell Crafting");
+crafting_skills["enchanting"] = new Skill("Enchanting");
+

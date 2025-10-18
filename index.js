@@ -44,20 +44,49 @@ let current_year = 1;
     })
 })
 
-function render_skills(catagory = "core", skill_collection){
-    if(!skill_collection){
+function render_skills(catagory, skill_collection){
+    if(!skill_collection || !catagory){
+	console.log("error encountered: missing params")
 	return;
     };
     let skill_container = document.getElementById(catagory);
     let skill_keys = Object.keys(skill_collection);
     skill_keys.forEach(skill_name => {
 	let skill = skill_collection[skill_name];
-	if(!skill.is_visible){
-	    return;
-	}
 	let skill_block = document.createElement("div");
 	let skill_name_span = document.createElement("span");
 	let skill_level_span = document.createElement("span");
 	let skill_level_progress = document.createElement("progress");
+
+	skill_block.className = "skill_block";
+	skill_block.id = skill_name + "_skill";
+	
+	skill_name_span.textContent = skill.name;
+	skill_name_span.className = "skill_name";
+	
+	skill_level_span.textContent = skill.level_current;
+	skill_level_span.className = "skill_level";
+	skill_level_span.id = skill_name + "_level";
+	
+	skill_level_progress.value = skill.xp_current;
+	skill_level_progress.max = skill.xp_max;
+	skill_level_progress.className = "skill_progress";
+	skill_level_progress.id = skill_name + "_progress"
+	
+	skill_block.appendChild(skill_name_span);
+	skill_block.appendChild(skill_level_span);
+	skill_block.appendChild(skill_level_progress);
+
+	skill_container.appendChild(skill_block);
     })
 }
+
+render_skills("core", core_skills);
+render_skills("body", body_skills);
+render_skills("mind", mind_skills);
+render_skills("guns", gun_skills);
+render_skills("blades", blade_skills);
+render_skills("bows", bow_skills);
+render_skills("spells", spell_skills);
+render_skills("crafts", crafting_skills);
+render_skills("armor", armor_skills);
