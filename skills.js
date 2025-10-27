@@ -1,104 +1,107 @@
-const core_skills = {};
-const gun_skills = {};
-const blade_skills = {};
-const body_skills = {};
-const mind_skills = {};
-const spell_skills = {};
-const armor_skills = {};
-const crafting_skills = {};
-const bow_skills = {};
+const skills = {};
 
 class Skill {
     constructor(
 	name = "name",
 	description = "this is a description",
+	catagory,
+	is_unlocked = false,
+	xp_gain = 0.1,
 	requirements = {},
     ){
 	this.name = name;
 	this.description = description;
-	this.level_current = 0;
-	this.xp_max = 100;
-	this.xp_current = 0;
+	this.catagory = catagory;
 	this.requirements = requirements;
-	this.is_unlocked = false;
+	this.level = 0;
+	this.xp_max = 10;
+	this.xp_current = 0;
+	this.xp_gain = xp_gain;
+	this.is_unlocked = this.is_unlocked;
     }
     
-    increase_xp(xp_delta = 0) {
-	if(xp_delta == 0 || !this.is_unlocked){
-	    return;
-	} else {
-	    this.xp_current += xp_delta;
+    increase_xp() {
+	this.xp_current += this.xp_gain;
+	if(this.xp_current > this.xp_max){
+	    this.xp_current -= this.xp_max;
+	    this.level++;
 	}
     }
 }
 //Core Skills
-core_skills["strength"] = new Skill("Strength");
-core_skills["agility"] = new Skill("Agility");
-core_skills["constitution"] = new Skill("Constitution");
-core_skills["perception"] = new Skill("Perception");
-core_skills["dexterity"] = new Skill("Dexterity");
-core_skills["intelligence"] = new Skill("Intelligence");
-core_skills["guns"] = new Skill("Guns");
-core_skills["blades"] = new Skill("Blades");
-core_skills["armor"] = new Skill("Armor");
-core_skills["bow"] = new Skill("Bows");
-core_skills["shields"] = new Skill("Shields");
-core_skills["crafting"] = new Skill("Crafting");
-// Gun Skills
-gun_skills["hand_guns"] = new Skill("Hand Guns");
-gun_skills["submachine_guns"] = new Skill("Submachine Guns");
-gun_skills["rifles"] = new Skill("Rifles");
-gun_skills["battle_rifles"] = new Skill("Battle Rifles");
-gun_skills["assult_rifles"] = new Skill("Assult Rifles");
-gun_skills["sniper_rifles"] = new Skill("Sniper Rifles");
-//Blade Skills
-blade_skills["knives"] = new Skill("Knives");
-blade_skills["short_swords"] = new Skill("Short Swords");
-blade_skills["straight_swords"] = new Skill("Straight Swords");
-blade_skills["curved_swords"] = new Skill("Curved Swords");
-blade_skills["long_swords"] = new Skill("Long Swords");
-blade_skills["great_swords"] = new Skill("Great Swords");
-//Armor Skills
-armor_skills["light_armor"] = new Skill("Light Armor");
-armor_skills["medium_armor"] = new Skill("Medium Armor");
-armor_skills["heavy_armor"] = new Skill("Heavy Armor");
-armor_skills["light_shields"] = new Skill("Light Sheilds");
-armor_skills["medium_shields"] = new Skill("Medium Shields");
-armor_skills["heavy_shields"] = new Skill("Heavy Shields");
-//Body Skills
-body_skills["resist"] = new Skill("Resistance");
-body_skills["dodge"] = new Skill("Dodge");
-body_skills["block"] = new Skill("Block");
-body_skills["strike"] = new Skill("Strike");
-body_skills["grapple"] = new Skill("Grapple");
-body_skills["sneak"] = new Skill("Sneak");
-body_skills["acrobatics"] = new Skill("Acrobatics");
-body_skills["endurance"] = new Skill("Endurance");
-//Mind Skills
-mind_skills["learning"] = new Skill("Learning");
-mind_skills["prediction"] = new Skill("Prediction");
-mind_skills["memory"] = new Skill("Memory");
-mind_skills["comprehension"] = new Skill("Comprehension");
-//Spell Skills 
-spell_skills["spell_casting"] = new Skill("Casting");
-spell_skills["mana_control"] = new Skill("Mana Control");
-spell_skills["summoning"] = new Skill("Summoning");
-spell_skills["elemental_spells"] = new Skill("Elemenal");
-spell_skills["healing_spells"] = new Skill("Healing");
-//Bow Skills
-bow_skills["short_bows"] = new Skill("Short Bows");
-bow_skills["long_bows"] = new Skill("Long Bows");
-bow_skills["heavy_bows"] = new Skill("Heavy Bows");
-bow_skills["light_crossbows"] = new Skill("Light Crossbows");
-bow_skills["medium_crossbows"] = new Skill("Medium Crossbows");
-bow_skills["heavy_crossbows"] = new Skill("Heavy Crossbows");
-// Crafting
-crafting_skills["chemisty"] = new Skill("Chemistry");
-crafting_skills["electronics"] = new Skill("Electronics");
-crafting_skills["gunsmithing"] = new Skill("Gunsmithing");
-crafting_skills["bladesmithing"] = new Skill("Bladesmithing");
-crafting_skills["armorsmithing"] = new Skill("ArmorSmithing");
-crafting_skills["bow_making"] = new Skill("Bow Crafting");
-crafting_skills["spell_crafting"] = new Skill("Spell Crafting");
-crafting_skills["enchanting"] = new Skill("Enchanting");
+skills["strength"] = new Skill("Strength",
+			       "There are few problems that can withstand the application of enough force",
+			       "core",
+			       true,
+			       0.25);
+skills["agility"] = new Skill("Agility",
+			      "Speed, balance,  grace",
+			      "core",
+			      true);
+skills["constitution"] = new Skill("Constitution",
+				   "It's not about how hard you can hit",
+				   "core",
+				   true,
+				  2);
+skills["perception"] = new Skill("Perception",
+				 "Look with your special eyes",
+				 "core",
+				 true);
+skills["dexterity"] = new Skill("Dexterity",
+				"Fine motor skills",
+				"core",
+				true);
+skills["intelligence"] = new Skill("Intelligence",
+				   "The ability to speak does not make one intelligent",
+				   "core",
+				   true,
+				  0.7);
+skills["endurance"] = new Skill("Endurance",
+				"Can you go the distance",
+				"core",
+				true);
+skills["spirit"] = new Skill("Spirit",
+			     "The soul is willing",
+			     "core",
+			     true);
+
+skills["strike"] = new Skill("Strike", "It IS about how hard you can hit", "combat", false, 2.3);
+skills["block"] = new Skill("Block", "For those that can't dodge roll", "combat");
+skills["dodge"] = new Skill("Dodge", "That looks like its going to hurt", "combat");
+skills["mana_control"] = new Skill("Mana Control", "Its a subtle art", "combat");
+
+skills["jump"] = new Skill("Jump", "How High?", "movement");
+skills["tumble"] = new Skill("Tumble", "Falling... with style", "movement");
+skills["sprint"] = new Skill("Sprint", "Very dangerous over short distances", "movement");
+skills["climb"] = new Skill("Climb", "Parquor?", "movement");
+
+skills["guns"] = new Skill("Guns", "An armed society is a polite society", "weapons");
+skills["blades"] = new Skill("Blades", "Stick 'em with the pointy end", "weapons");
+skills["bows"] = new Skill("Bows", "How far will it fly", "weapons");
+skills["spells"] = new Skill("Magic", "This is why we don't sass", "weapons", false, 4);
+
+skills["study"] = new Skill("Study", "So this is what cram school is for", "learning");
+skills["comprehension"] = new Skill("Comprehension", "It's key...", "learning");
+skills["memory"] = new Skill("Memory", "I can't remember what I forgot", "learning");
+
+skills["hand_guns"] = new Skill("Hand Guns", "Big iron on your hip?", "guns");
+skills["submachine_guns"] = new Skill("Sub-machine Guns", "Rat-a-tat-tat", "guns");
+skills["rifles"] = new Skill("Rifles", "It's for hunting...", "guns");
+skills["battle_rifles"] = new Skill("Battle Rifles", "...there are many like it but this one is mine", "guns");
+
+skills["knives"] = new Skill("Knives", "The slow blade pierces the shield", "blades");
+skills["short_swords"] = new Skill("Short Swords", "It's about how you use it", "blades");
+skills["straight_swords"] = new Skill("Straight Swords", "Wow much straight, much knight", "blades", false, 1.5);
+skills["curved_swords"] = new Skill("Curved Swords", "They have curved swords... CURVED SWORDS", "blades");
+skills["great_swords"] = new Skill("Great Swords", "Does it even need an edge at this point", "blades");
+
+skills["light_bows"] = new Skill("Light Bows", "Simple, practical", "bows");
+skills["long_bows"] = new Skill("Long Bows", "Let them fight in the shade", "bows");
+skills["great_bows"] = new Skill("Great Bows", "This takes more strength than I expected", "bows", false, .11);
+skills["crossbows"] = new Skill("Crossbows", "All the style of a gun, without the noise", "bows");
+
+skills["light_armor"] = new Skill("Light Armor", "Who doesn't want to be wrapped in leather straps...", "armor");
+skills["medium_armor"] = new Skill("Medium Armor", "Will stop a bullet... it'll still hurt though", "armor");
+skills["heavy_armor"] = new Skill("Heavy Armor", "Who needs to move anyways", "armor");
+skills["shields"] = new Skill("Shields", "Shield walls... shield walls everywhere", "armor");
 
